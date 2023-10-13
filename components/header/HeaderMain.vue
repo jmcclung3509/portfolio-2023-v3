@@ -1,5 +1,5 @@
 <template>
-	<header class="main flex w-full h-28"
+	<header class="main flex w-full h-28 bg-light-peach"
 		:class="{ sticky: isHeaderSticky }">
 		<div class="container m-auto flex justify-between items-center z-10 w-full">
 			<div class="left flex items-center justify-center gap-4">

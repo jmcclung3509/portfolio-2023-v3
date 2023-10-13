@@ -1,64 +1,82 @@
-
-
 export default defineNuxtConfig({
-  head: {
-    title: 'Jessica Turner | 2023',
-    charset: 'utf-8',
-    meta: [
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1, viewport-fit=cover',
-      },
-    ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        href: '/static/images/favicon.png',
-      },
-      {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-      },
-      {
-        href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap',
-        rel: 'stylesheet',
-      },
-      {
-        href: 'https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@300;400;500;700&display=swap',
-        rel: 'stylesheet',
-      },
-      {
-        href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined',
-        rel: 'stylesheet',
-      },
-    ],
-    noscript: [{ innerHTML: 'Javascript is required' }],
-    script: [],
+  app: {
+    head: {
+      title: "Jessica Turner | 2023",
+      charset: "utf-8",
+      meta: [
+        {
+          name: "viewport",
+          content:
+            "width=device-width, initial-scale=1, viewport-fit=cover",
+        },
+      ],
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/static/images/favicon.png",
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+
+        },
+        {
+          href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap",
+          rel: "stylesheet"
+        },
+        {
+          href: "https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@300;400;500;700&display=swap",
+          rel: "stylesheet"
+        },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" },
+        {
+          href: "https://kit.fontawesome.com/23a4783b51.js", crossorigin: "anonymous"
+        }
+
+      ],
+      noscript: [{ children: "Javascript is required" }],
+      script: [],
+    },
   },
 
   devtools: { enabled: true },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  css: [
+    "@/assets/scss/main.scss",
+    "@/assets/scss/variables.scss",
+    "@/assets/scss/transitions.scss"
 
-  buildModules: ['@nuxt3/tailwindcss'],
+  ],
+  modules: ["@nuxtjs/tailwindcss"],
 
-  css: ['@/assets/scss/main.scss', '@/assets/scss/variables.scss'],
-
+  ssr: true,
+  vite: {
+    css: {
+      devSourcemap: true,
+    },
+  },
   tailwindcss: {
     cssPath: false,
-    configPath: 'tailwind.config.js',
-    jit: true, // Enable JIT mode
+    configPath: "tailwind.config.js",
+
+    config: {},
   },
-
-  build: {},
-
-  publicRuntimeConfig: {
-    env: process.env.ENV,
-    BASE_API_BROWSER_URL: '',
+  build: {
   },
-
+  runtimeConfig: {
+    public: {
+      env: process.env.ENV,
+      BASE_API_BROWSER_URL: ""
+    }
+  },
   experimental: {
     payloadExtraction: false,
   },
-
 
 });

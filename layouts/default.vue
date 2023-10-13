@@ -1,17 +1,22 @@
 <template>
 	<Html lang='en'>
-	    <Body :class="['page-' + route.name]">
-			<Overlay></Overlay>
+
+	<Body :class="['page-' + route.name]">
+		<Overlay></Overlay>
 		<div class="relative flex flex-wrap"
-			:class="{'mobile-menu-open': isMobileMenuOpen}">
-			<HeaderMain @mobileMenuClick = "onMobileMenuClick"/>
+			:class="{ 'mobile-menu-open': data.mobileMenuOpen }">
+			<HeaderMain @mobileMenuClick="onMobileMenuClick" />
 			<div class="wrap-inner w-full overflow-hidden">
+				<StickySidebar></StickySidebar>
 				<slot />
+
 				<Footer />
 			</div>
-			<HeaderMobileMenu :mobileMenuOpen = "isMobileMenuOpen"></HeaderMobileMenu>
+			<HeaderMobileMenu ></HeaderMobileMenu>
+
 		</div>
-		</Body>
+	</Body>
+
 	</Html>
 </template>
 
@@ -19,23 +24,23 @@
 
 const route = useRoute()
 
-const {isMobile} = useScreenSize()
+const { isMobile } = useScreenSize()
 
 const data = reactive({
-	mobileMenuOpen:false
+	mobileMenuOpen: false
 })
-const onMobileMenuClick = (payload)=>{
-	data.mobileMenuOpen= payload
+const onMobileMenuClick = (payload) => {
+	data.mobileMenuOpen = payload
 	console.log(data.mobileMenuOpen)
 }
-const isMobileMenuOpen = computed(()=>{
+const isMobileMenuOpen = computed(() => {
 
 	return data.mobileMenuOpen && isMobile.value
 
 })
 
-onMounted(()=>{
-	setTimeout (()=>{
+onMounted(() => {
+	setTimeout(() => {
 		useAnimateObserver()
 		useGoToAnchor()
 	},)

@@ -1,5 +1,11 @@
 @import "@/assets/scss/variables.scss";
 
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src: url(https://example.com/material-symbols.woff) format('woff');
+}
+
 body {
 	background-color: $default-white;
 	color: $default-dark;
@@ -21,10 +27,12 @@ h3 {}
 		}
 	}
 }
+header{
+	border-bottom:2px solid rgba(48,31,64,0.15);
+	box-shadow: 0px 4px 4px 0px rgba(48,31,64,0.43);
+}
 
 .button-container {
-
-
 	border-radius: 5px;
 	color: $default-white;
 	font-weight: 500;
@@ -40,7 +48,7 @@ h3 {}
 		position: relative;
 		opacity: 0.8;
 
-		background-image: linear-gradient($default-white, $default-white), linear-gradient(45deg, $medium-purple, $dark-purple);
+		background-image: linear-gradient($light-peach, $light-peach), linear-gradient(45deg, $medium-purple, $dark-purple);
 		color: $default-dark;
 		border: 2px solid transparent;
 		background-origin: border-box;
@@ -65,14 +73,105 @@ h3 {}
 		padding: 10px;
 	}
 }
-.mobile-menu{
+
+.mobile-menu {
 	position: fixed;
+	top: 100px;
+
+	z-index: 10;
+	background: $linear-gradient-1;
+	border-top: 2px solid $medium-purple;
+	border-left: 2px solid $medium-purple;
 	border-radius: 12px 0 0 12px;
+	overflow-y: hidden;
 	height: 100%;
 	right: 0;
 	transform: translateX(100%);
-	transition: transform .5s cubic-bezier (.76, -0.01, 0.3, .99);
-	a{
-		color: $default-dark;
+	width: 0%;
+	transition: transform 0.5s cubic-bezier(0.76, -0.01, 0.3, 0.99);
+
+
+	li {
+		display: flex;
+		justify-content: flex-end;
+
+		a {
+			color: $default-dark;
+
+		}
+	}
+
+	.mobile-menu-open & {
+		transform: translateX(0);
+		position: fixed;
+		height: 100vh;
+		opacity: 0.95;
+		justify-content: flex-start;
+		z-index: 100;
+		padding: 40px 20px;
 	}
 }
+
+//General Styles
+
+//Component Styles
+.animate-underline {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 2px;
+	width: fit-content;
+	margin: 0;
+	text-decoration: 0;
+	border: none;
+	transition: border-color .3s;
+
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		transition: width .3s ease-out;
+	}
+	&:hover{
+		&:before{
+			width: 100%;
+		}
+	}
+
+	&.purple {
+		color: $dark-purple;
+
+		&:before {
+			content: "";
+			background: linear-gradient (to right, $dark-purple, rgba($dark-purple, .40));
+		}
+	}
+}
+.animate-arrow{
+	&:after{
+		content: "arrow_forward";
+		font-family: 'Material Symbols Outlined';
+		font-size: 15px;
+		padding-left: 5px;
+		display: inline-flex;
+		transition: transform .5s
+	}
+	&.purple{
+		color: $dark-purple;
+	}
+	&:hover{
+		&:after{
+			transform: translateX(5px);
+		}
+
+
+	}
+}
+
+//Hero{
+	section.hero{
+		background: $linear-gradient-1;
+	
+	}
