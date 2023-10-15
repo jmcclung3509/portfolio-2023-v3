@@ -1,13 +1,14 @@
 @import "@/assets/scss/variables.scss";
 
+
 @font-face {
-  font-family: 'Material Symbols Outlined';
-  font-style: normal;
-  src: url(https://example.com/material-symbols.woff) format('woff');
+	font-family: 'Material Symbols Outlined';
+	font-style: normal;
+	src: url(https://example.com/material-symbols.woff) format('woff');
 }
 
 body {
-	background-color: $default-white;
+	background-color: $light-peach;
 	color: $default-dark;
 	font-family: "Montserrat", sans-serif;
 	width: 100%;
@@ -16,6 +17,19 @@ body {
 h1,
 h2,
 h3 {}
+
+
+.sticky {
+	position: sticky;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.relative {
+	position: relative;
+}
 
 .wrap-inner {
 	min-height: 100vh;
@@ -27,11 +41,7 @@ h3 {}
 		}
 	}
 }
-header{
-	border-bottom:2px solid rgba(48,31,64,0.15);
-	box-shadow: 0px 4px 4px 0px rgba(48,31,64,0.43);
-}
-
+//button
 .button-container {
 	border-radius: 5px;
 	color: $default-white;
@@ -73,6 +83,31 @@ header{
 		padding: 10px;
 	}
 }
+
+header.main {
+
+	box-shadow: 0px 4px 4px 0px rgba(48, 31, 64, 0.3);
+	position: absolute;
+	top: 0;
+	width: 100%;
+	transition: background-color .5s ease;
+	background-color:$light-peach;
+	z-index:2;
+
+	&.sticky-header {
+		position: fixed;
+		background-color: transparent;
+		z-index: 2;
+
+		@screen lg {
+			background-color: rgba($light-peach, .8);
+		}
+
+
+	}
+}
+
+
 
 .mobile-menu {
 	position: fixed;
@@ -132,10 +167,11 @@ header{
 		left: 0;
 		width: 0;
 		height: 2px;
-		transition: width .3s ease-out;
+		transition: width .3s ease;
 	}
+
 	&:hover{
-		&:before{
+		&:before {
 			width: 100%;
 		}
 	}
@@ -148,9 +184,17 @@ header{
 			background: linear-gradient (to right, $dark-purple, rgba($dark-purple, .40));
 		}
 	}
+	&.orange{
+
+		&:before {
+			content: "";
+			background: $orange;
+		}
+	}
 }
-.animate-arrow{
-	&:after{
+
+.animate-arrow {
+	&:after {
 		content: "arrow_forward";
 		font-family: 'Material Symbols Outlined';
 		font-size: 15px;
@@ -158,11 +202,13 @@ header{
 		display: inline-flex;
 		transition: transform .5s
 	}
-	&.purple{
+
+	&.purple {
 		color: $dark-purple;
 	}
-	&:hover{
-		&:after{
+
+	&:hover {
+		&:after {
 			transform: translateX(5px);
 		}
 
@@ -171,7 +217,13 @@ header{
 }
 
 //Hero{
-	section.hero{
-		background: $linear-gradient-1;
-	
-	}
+section.hero {
+	background: $linear-gradient-1;
+
+}
+//INFO Section
+
+section.info{
+	margin-top: 0 !important;
+
+}

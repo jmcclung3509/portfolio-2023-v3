@@ -11,6 +11,8 @@ export const useScroll = () => {
 	const scrollDirectionUp = ref(false)
 	const colorScrollContainer = ref<HTMLElement | null>(null)
 
+
+
 	const handleScroll = () => {
 		//set current scroll position
 		scrollPosition.value = window.scrollY
@@ -34,8 +36,37 @@ export const useScroll = () => {
 				colorScrollContainer.value.style.setProperty("--scroll-progress", "0%")
 			}
 		}
-	}
 
+
+
+		const socialIcons = document.querySelectorAll(".social-icon")
+
+
+	socialIcons.forEach((icon) => {
+
+
+		  const iconRect = icon.getBoundingClientRect();
+		  const isLight = icon.classList.contains("light");
+		const darkSections = document.querySelectorAll(".section.dark")
+		let isDark = false;
+
+		darkSections.forEach((section)=>{
+			const sectionRect=section.getBoundingClientRect()
+
+			if(iconRect.top < sectionRect.bottom && iconRect.bottom >sectionRect.top){
+				isDark = true;
+			}
+		})
+
+		if(isDark){
+			icon.classList.add("light")
+
+			}else{
+				icon.classList.remove("light")
+			}
+		})
+
+	  };
 	onMounted(() => {
 		window.addEventListener("scroll", handleScroll, { passive: true })
 		colorScrollContainer.value = document.querySelector(".color-scroll-container")

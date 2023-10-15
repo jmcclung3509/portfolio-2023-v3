@@ -1,6 +1,6 @@
 <template>
-	<header class="main flex w-full h-28 bg-light-peach"
-		:class="{ sticky: isHeaderSticky }">
+	<header class="main flex w-full h-28"
+		:class="{ 'sticky-header': isHeaderSticky }">
 		<div class="container m-auto flex justify-between items-center z-10 w-full">
 			<div class="left flex items-center justify-center gap-4">
 				<img class="computer-ico max-h-[80px]"

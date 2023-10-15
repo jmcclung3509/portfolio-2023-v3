@@ -1,3 +1,7 @@
+
+
+
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -30,9 +34,7 @@ export default defineNuxtConfig({
           rel: "stylesheet"
         },
         { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" },
-        {
-          href: "https://kit.fontawesome.com/23a4783b51.js", crossorigin: "anonymous"
-        }
+
 
       ],
       noscript: [{ children: "Javascript is required" }],
@@ -45,15 +47,22 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+
     },
   },
   css: [
     "@/assets/scss/main.scss",
     "@/assets/scss/variables.scss",
-    "@/assets/scss/transitions.scss"
+    "@/assets/scss/transitions.scss",
+    '@fortawesome/fontawesome-svg-core/styles.css'
+
+
 
   ],
   modules: ["@nuxtjs/tailwindcss"],
+  plugins: [
+    { src: '~/plugins/fontawesome.ts' }
+  ],
 
   ssr: true,
   vite: {
