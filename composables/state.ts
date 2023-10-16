@@ -42,31 +42,31 @@ export const useScroll = () => {
 		const socialIcons = document.querySelectorAll(".social-icon")
 
 
-	socialIcons.forEach((icon) => {
+		socialIcons.forEach((icon) => {
 
 
-		  const iconRect = icon.getBoundingClientRect();
-		  const isLight = icon.classList.contains("light");
-		const darkSections = document.querySelectorAll(".section.dark")
-		let isDark = false;
+			const iconRect = icon.getBoundingClientRect();
+			const isLight = icon.classList.contains("light");
+			const darkSections = document.querySelectorAll(".section.dark")
+			let isDark = false;
 
-		darkSections.forEach((section)=>{
-			const sectionRect=section.getBoundingClientRect()
+			darkSections.forEach((section) => {
+				const sectionRect = section.getBoundingClientRect()
 
-			if(iconRect.top < sectionRect.bottom && iconRect.bottom >sectionRect.top){
-				isDark = true;
-			}
-		})
+				if (iconRect.top < sectionRect.bottom && iconRect.bottom > sectionRect.top) {
+					isDark = true;
+				}
+			})
 
-		if(isDark){
-			icon.classList.add("light")
+			if (isDark) {
+				icon.classList.add("light")
 
-			}else{
+			} else {
 				icon.classList.remove("light")
 			}
 		})
 
-	  };
+	};
 	onMounted(() => {
 		window.addEventListener("scroll", handleScroll, { passive: true })
 		colorScrollContainer.value = document.querySelector(".color-scroll-container")
@@ -111,7 +111,7 @@ export const useScreenSize = () => {
 		window.addEventListener("resize", handleResize)
 		handleResize()
 	})
-	return {size, isMobile}
+	return { size, isMobile }
 }
 
 //useAnimateObserver
