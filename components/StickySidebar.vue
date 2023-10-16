@@ -6,12 +6,12 @@
 <div class="flex flex-col space-y-4 items-center">
 			<font-awesome-icon
 				class="social-icon text-1.5xl hover:text-dark-purple"
-				:icon="['fab', 'github']"
+				:icon="['fab', 'fa-github']"
 
 				 />
 			<font-awesome-icon
 				class="social-icon text-1.5xl hover:text-dark-purple"
-				:icon="['fab', 'linkedin']"
+				:icon="['fab', 'fa-linkedin']"
 				/>
 </div>
 			<div class="sidebar-line social-icon w-[2px] h-[80px]" ></div>

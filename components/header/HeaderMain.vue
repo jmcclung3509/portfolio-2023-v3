@@ -55,7 +55,7 @@
 const scrollPosition = useScroll().scrollPosition
 const scrollDirectionUp = useScroll().scrollDirectionUp
 const size = useScreenSize().size
-console.log('size',size)
+
 
 const data = reactive({
 	mobileMenuOpen: false,
@@ -70,7 +70,7 @@ const isHeaderSticky = computed(() => {
 })
 const onMobileMenuClick = (payload) => {
 	data.mobileMenuOpen = payload
-	console.log(data.mobileMenuOpen)
+
 }
 const menuIcon = computed(() => {
 	return data.mobileMenuOpen ? 'close' : 'menu'

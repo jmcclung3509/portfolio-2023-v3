@@ -12,12 +12,18 @@ body {
 	color: $default-dark;
 	font-family: "Montserrat", sans-serif;
 	width: 100%;
+	font-display: swap;
 }
 
 h1,
 h2,
-h3 {}
-
+h3 {
+	font-family: 'Hepta Slab', serif;
+}
+p{
+	font-size: 18px;
+	font-weight: 100;
+}
 
 .sticky {
 	position: sticky;
@@ -219,6 +225,23 @@ header.main {
 //Hero{
 section.hero {
 	background: $linear-gradient-1;
+	height: 90vh;
+	position: relative;
+	@screen lg {
+	.svg-container{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	    transform: scale(0.8) translateY(12.5%);
+		svg{
+			margin: auto;
+		}
+
+
+
+	}
+}
 
 }
 //INFO Section
