@@ -28,7 +28,7 @@
 							<nuxt-link to="/contact">Contact</nuxt-link>
 						</li>
 						<li class="relative p-2">
-							<div class="button-container  hollow flex">
+							<div class="button-container hollow purple  flex">
 								<nuxt-link class="button "
 									to="/resume">Resume</nuxt-link>
 							</div>

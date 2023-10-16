@@ -23,7 +23,7 @@
 			</div>
 		</section>
 		<section class="section info bg-default-dark dark">
-			<div class="container mx-auto pt-36 space-y-4">
+			<div class="container mx-auto py-36  space-y-4">
 				<SkillMain />
 			</div>
 		</section>
