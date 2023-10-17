@@ -1,14 +1,14 @@
 <template>
-	<main class="space-y-36 lg:space-y-52 relative light-section ">
-		<section class="section pt-64 xl-pt-40 fold animate hero light">
+	<main class="  relative light-section ">
+		<section class="section pt-44 lg:pt-52 xl-pt-40 fold animate hero light">
 			<div
-				class="flex flex-col space-between items-center container mx-auto space-y-14">
+				class="flex flex-col justify-center items-center container mx-auto ">
 				<div
-					class="flex justify-center items-center flex-col space-y-4">
-					<h1 class="text-3xl text-purple-dark">
+					class="flex justify-center items-center flex-col space-y-4 ">
+					<h1 class="text-2xl lg:text-3xl text-center text-purple-dark">
 						Hi, my name is Jessica
 					</h1>
-					<h2 class="text-2xl text-purple-dark opacity-80">
+					<h2 class=" text-1xl lg:text-2xl text-center text-purple-dark opacity-80">
 						I design and build things for the web.
 					</h2>
 					<ArrowLink
@@ -16,19 +16,28 @@
 						:underlineLink="true"
 						link="#projects" />
 				</div>
-				<div class="image-container">
-					<!-- <img  class="mt-24" src="@/assets/images/home/avatar.png"/> -->
+				<div v-if="['lg', 'xl'].includes(size)" class="svg-container">
+
 					<Avatar />
 				</div>
+				<div v-else class="svg-container">
+					<img  class="" src="@/assets/images/home/mobile-avatar-2.png"/>
+			</div>
 			</div>
 		</section>
 		<section class="section info bg-default-dark dark">
 			<div class="container mx-auto py-36  space-y-4">
+				<template v-if="['lg', 'xl'].includes(size)" class="svg-container">
 				<SkillMain />
+				</template>
+				<template v-else>
+					<SkillMobile />
+				</template>
+
 			</div>
 		</section>
-		<section class="section info bg-light-peach light">
-			<div class="container mx-auto pt-36 space-y-4">
+		<section class="section product bg-linear-gradient-1 light">
+			<div class="container mx-autospace-y-4 py-36 ">
 				<p class="text-light-peach">Lorem Ipsum</p>
 				<p class="text-light-peach">Lorem Ipsum</p>
 				<p class="text-light-peach">Lorem Ipsum</p>
@@ -46,7 +55,10 @@
 	</main>
 </template>
 <script setup>
+
 import "@/assets/css/tailwind.css";
+
+const size = useScreenSize().size
 
 const route = useRoute();
 

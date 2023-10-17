@@ -45,6 +45,9 @@ module.exports = {
 				'light-peach': '#FFF4F0',
 				'orange': '#FF7442',
 			},
+			backgroundImage: {
+				'linear-gradient-1': 'linear-gradient(149.25deg, #F4F4F4 , #FFF4F0, #ECE4FB, #DDCDEA, #B295DA)',
+			},
 			fontFamily: {
 				montserrant : ['Montserrat', 'sans-serif' ],
 				heptaSlab: ['Hepta Slab', 'serif' ]

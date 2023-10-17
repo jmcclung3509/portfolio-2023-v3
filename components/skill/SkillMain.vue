@@ -25,7 +25,7 @@
 			<template v-if="data.selectedSection === 'about'">
 
 
-						<div class="flex justify-center ">
+						<div class="flex items-center flex-row justify-center ">
 							<div
 								class="flex flex-col w-1/2 items-start space-y-14">
 								<div class="content space-y-7">
@@ -51,18 +51,18 @@
 								</p>
 								</div>
 								<div class="bullet-section">
-									<ul class="flex flex-wrap items-start w-[110%] custom">
+									<ul class="flex flex-row flex-wrap items-start w-[110%] custom">
 										<li class="w-1/2 pb-14 ">
 											<h3 class="text-light-peach">Experience</h3>
 											<p class="text-light-purple ml-[40px]"> 2+ years</p>
 										</li>
-										<li class="w-1/ pb-14 ">
+										<li class="pb-14 ">
 											<h3 class="text-light-peach">Location</h3>
 												<p class="text-light-purple ml-[40px]"> Bay Area, CA</p>
 										</li>
-										<li class="w-3/4 ">
+										<li class="w-1/2 ">
 											<h3 class="text-light-peach">Hobbies</h3>
-												<p class="text-light-purple ml-[40px]">Reading, baking, crafting, hanging with the fam</p>
+												<p class="text-light-purple ml-[40px]">			Reading, baking, crafting, UNO, hanging with the family</p>
 										</li>
 									</ul>
 								</div>
@@ -74,7 +74,7 @@
 							</div>
 						</div>
 
-							<div class="w-1/2 ">
+							<div class="w-1/2  ">
 								<div class="image-container w-3/4 pb-[75%] mx-auto">
 								<img
 									class="w-full "
@@ -88,7 +88,7 @@
 			</template>
 			<template v-if="data.selectedSection === 'skills'">
 				<div
-								class="flex flex-col w-3/4 items-start space-y-14">
+								class="flex flex-col w-3/4  items-start space-y-14">
 								<div class="content space-y-7">
 								<p class="text-light-peach text-fine">
 									For the last year I have been wroking primarily in Vue, Nuxt and WordPress. I enjoy designing layouts in Figma, and creating vector images in Adobe Illustrator.   I also have experience developing webpages and simple applications in React and Node.
@@ -96,7 +96,7 @@
 
 								</div>
 								<div class="bullet-section">
-									<ul class="flex flex-wrap items-start w-[110%] custom">
+									<ul class="flex tems-start flex-row flex-wrap w-[110%] custom">
 										<li class="w-1/2 pb-14 ">
 											<h3 class="text-light-peach">html/css</h3>
 											<p class="text-light-purple ml-[40px]"> SCSS, Sass, Flex, Grid, Bootstrap, Tailwind</p>
@@ -130,9 +130,9 @@
 
 								</div>
 								<div class="bullet-section">
-									<ul class="flex flex-wrap items-start w-[110%] custom">
-										<li class="w-3/4 pb-14 space-y-1">
-											<h3 class="text-light-peach">Sitezeus</h3>
+									<ul class="flex items-start flex-row flex-wrap w-[110%] custom">
+										<li class=" w-4/5 pb-14 space-y-1">
+											<h3 class="text-light-peach ">Sitezeus</h3>
 											<p class="text-light-purple ml-[40px]"> Junior Frontend Developer, September 2022-Present</p>
 											<p class="text-light-purple ml-[40px]"> Vue, Nuxt, WordPress</p>
 											<div class="flex flex-col space-y-4 pt-4">
@@ -142,9 +142,9 @@
 											</p>
 										</div>
 										</li>
-										<li class="w-3/4 pb-14 space-y-1">
+										<li class="w-4/5 pb-14 space-y-1">
 
-											<h3 class="text-light-peach">Freelance</h3>
+											<h3 class="text-light-peach ">Freelance</h3>
 											<p class="text-light-purple ml-[40px]">Frontend Developer, UI/UX Designer, April 2021 - Present</p>
 
 											<p class="text-light-purple ml-[40px]">React, Vue, Nuxt, Adobe Creative Suite, Figma</p>
@@ -168,55 +168,9 @@ const showSection = (section) => {
 	console.log(section);
 };
 </script>
-<style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
-h3 {
-	display: inline-block;
-	position: relative;
-	padding-bottom: 2px;
-	width: fit-content;
-	margin: 0;
+<style scoped>
+h3{
 
-	&:before {
-		content: "";
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0;
-		height: 2px;
-		background: $orange;
-		transition: width 0.3s;
-	}
-	&.active {
-		&:before {
-			width: 100%;
-		}
-	}
-}
-.image-container {
-	position: relative;
-	transform: translateX(20%);
-	img {
-		position: absolute;
-		z-index: 30;
-
-	}
-	&:before {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background-image: linear-gradient($default-dark, $default-dark),
-			linear-gradient(45deg, $dark-purple, $orange);
-
-		border: 4px solid transparent;
-		background-origin: border-box;
-		background-clip: content-box, border-box;
-	}
-	&:before {
-		left: 25px;
-		top: 25px;
-		z-index: 20;
-	}
 }
 </style>
+

@@ -1,5 +1,5 @@
 <template>
-	<div class="sidebar-container w-[100px]">
+	<div class="hidden md:block sidebar-container w-[100px]">
 		<div class="flex flex-col items-center gap-4">
 
 
@@ -29,7 +29,7 @@
 .sidebar-container {
 
 	position: fixed;
-	bottom: 20px;
+	bottom: 0px;
 	right: 0px;
 	z-index: 10;
 	.social-icon{

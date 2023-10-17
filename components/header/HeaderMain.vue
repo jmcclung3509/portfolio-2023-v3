@@ -4,9 +4,9 @@
 		<div class="container m-auto flex justify-between items-center z-10 w-full">
 			<div class="left flex items-center justify-center gap-4">
 				<img class="computer-ico max-h-[80px]"
-					src="@/assets/images/logos/computer-logo.png" />
-				<h3 v-show="['lg', 'xl'].includes(size)"
-					class="text-2xl pt-4"> Jessica Turner</h3>
+					src="@/assets/images/logos/geo-logo.svg" />
+				<h4 v-show="['lg', 'xl'].includes(size)"
+					class="text-2xl pt-4"> Jessica Turner</h4>
 			</div>
 			<template v-if="['lg', 'xl'].includes(size)">
 				<nav class="right main flex justify-end items-center">
