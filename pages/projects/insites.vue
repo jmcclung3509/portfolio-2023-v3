@@ -1,0 +1,3 @@
+<template>
+	Insites page
+</template>

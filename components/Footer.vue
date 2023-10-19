@@ -1,3 +1,0 @@
-<template>
-	FOoter
-</template>

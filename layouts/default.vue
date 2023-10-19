@@ -11,7 +11,6 @@
 					<slot />
 				</div>
 
-				<Footer />
 			</div>
 			<HeaderMobileMenu :class="{ 'mobile-menu-open': isMobileMenuOpen }"></HeaderMobileMenu>
 		</Body>
@@ -28,18 +27,24 @@ const data = reactive({
 });
 const onMobileMenuClick = (payload) => {
 	data.mobileMenuOpen = payload;
-	console.log(data.mobileMenuOpen);
+
 };
 const isMobileMenuOpen = computed(() => {
 
 	return data.mobileMenuOpen && isMobile.value;
 });
-console.log(isMobileMenuOpen, 'isMobileMenuOpen')
-console.log(data.mobileMenuOpen)
+
+
 onMounted(() => {
 	setTimeout(() => {
 		useAnimateObserver();
 		useGoToAnchor();
-	});
+	}, 100);
+});
+onUpdated(() => {
+	setTimeout(() => {
+		useAnimateObserver();
+		useGoToAnchor();
+	}, 100);
 });
 </script>

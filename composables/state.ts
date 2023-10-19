@@ -117,20 +117,32 @@ export const useScreenSize = () => {
 //useAnimateObserver
 
 export const useAnimateObserver = () => {
-	const animatedEls = document.querySelectorAll('.animate')
+	const animatedEls = document.querySelectorAll('.animate');
+const animatedBtn=document.querySelector(".animated-btn")
+const contactSection = document.querySelector(".contact")
+
 	const options = {
-		threshold: 0.4
-	}
+		threshold: 0.3
+	};
 	let observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
-				entry.target.classList.add("animated")
-			}
-			observer.unobserve(entry.target)
+				entry.target.classList.add("animated");
 
-		})
-	}, options)
-}
+				setTimeout(() => {
+					observer.unobserve(entry.target);
+				}, 1000); //
+			if(entry.target === contactSection){
+				animatedBtn?.classList.add("slide-in")
+
+			}
+			}
+		});
+	}, options);
+	animatedEls.forEach((el) => observer.observe(el));
+
+
+};
 
 export const useGoToAnchor = () => {
 	document.querySelectorAll("a[data-go-to]").forEach((anchor) => {

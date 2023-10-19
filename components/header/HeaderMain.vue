@@ -4,7 +4,7 @@
 		<div class="container m-auto flex justify-between items-center z-10 w-full">
 			<div class="left flex items-center justify-center gap-4">
 				<img class="computer-ico max-h-[80px]"
-					src="@/assets/images/logos/geo-logo.svg" />
+					src="@/assets/images/logos/bee.png" />
 				<h4 v-show="['lg', 'xl'].includes(size)"
 					class="text-2xl pt-4"> Jessica Turner</h4>
 			</div>
@@ -27,9 +27,9 @@
 						<li class="relative p-2">
 							<nuxt-link to="/contact">Contact</nuxt-link>
 						</li>
-						<li class="relative p-2">
-							<div class="button-container hollow purple  flex">
-								<nuxt-link class="button "
+						<li class="relative p-2 ">
+							<div class="button hollow purple  flex">
+								<nuxt-link class="inner-button "
 									to="/resume">Resume</nuxt-link>
 							</div>
 						</li>

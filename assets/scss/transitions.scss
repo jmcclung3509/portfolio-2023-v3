@@ -7,3 +7,19 @@
 .fade-leave-to{
 	opacity: 0;
 }
+.slide-in{
+	transform: translateX(-1000%);
+	animation: slide-in .5s forwards linear;
+	opacity: 0;
+
+}
+@keyframes slide-in{
+0%{
+	opacity: 0;
+	transform: translateX(-300%);
+}
+100%{
+	opacity: 1;
+	transform: translateX(0%);
+}
+}
