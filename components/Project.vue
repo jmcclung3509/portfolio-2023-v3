@@ -1,8 +1,9 @@
 <template>
-	<div class="animate flex  flex-nowrap md:flex-row flex-col items-start justify-center md:gap-14" :class="[{'md:flex-row-reverse': props.reverse}, {'md:flex-row':!props.reverse}]">
-		<div class="flex image-container grow-0 w-1/2" >
+	<div class="animate flex  flex-nowrap md:flex-row flex-col items-start justify-center md:gap-20 lg: gap-24" :class="[{'md:flex-row-reverse': props.reverse}, {'md:flex-row':!props.reverse}]">
+		<div class="flex image-container grow-0 w-1/2" :class="props.reverse ? 'right-image' : 'left-image'">
 			<img
-			class=""
+			class=" w-4/5"
+			:class="props.reverse ? 'mr-20 right-image' : 'ml-20 left-image'"
 				:src="props.imageSrc"
 				:alt="`${props.projectTitle} project image`" />
 		</div>

@@ -14,7 +14,10 @@ $orange: #FF7442;
 $linear-gradient-1: linear-gradient(149.25deg, $default-white , $light-peach, $extra-light-purple, $light-purple, $medium-purple);
 $linear-gradient-2: linear-gradient($medium-purple, $dark-purple);
 $linear-gradient-3: linear-gradient(45deg, $medium-purple, $dark-purple);
+
 $linear-gradient-4: linear-gradient(77deg, $light-peach, $extra-light-purple, $light-purple, $extra-light-purple, $light-peach);
+
+$border-gradient: linear-gradient(45deg, $orange, $dark-purple);
 
 
 
@@ -24,4 +27,5 @@ $break-small: 500px;
 $break-med: 768px;
 $break-large-tablet: 1024px;
 $break-large: 1200px;
-$break-xlarge: 1600px;
+$break-xlarge: 1400px;
+$break-xxlarge: 1600px;

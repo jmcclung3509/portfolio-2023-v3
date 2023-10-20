@@ -68,8 +68,8 @@
 								</div>
 								<div class="flex flex-col items-start justify-start space-y-7 ml-[40px]">
 									<h2 class=text-light-peach> Want to learn more?</h2>
-									<div class="button hollow purple-orange">
-									<nuxt-link to="/contact" target="_blank" class="inner-button "> Get in touch </nuxt-link>
+									<div class="button-container hollow purple-orange">
+									<nuxt-link to="/contact" target="_blank" class="button "> Get in touch </nuxt-link>
 								</div>
 							</div>
 						</div>
@@ -113,7 +113,7 @@
 											<h3 class="text-light-peach">Tools</h3>
 												<p class="text-light-purple ml-[40px]">Git/GitHub, Sourcetree, Azure, Chrome DevTools, FTP Client, Postman, MongoDB</p>
 										</li>
-										<li class="w-1/2 pb-14 pr-7">
+										<li class="w-1/2 pb-14 ">
 											<h3 class="text-light-peach">Soft skills</h3>
 												<p class="text-light-purple ml-[40px]">Creative problem solver, growth mindset, can-do attitude, skilled communicator</p>
 										</li>

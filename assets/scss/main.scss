@@ -80,16 +80,19 @@ ul.custom {
 		}
 	}
 }
-.animate{
+
+.animate {
 	opacity: 0;
 	transform: translateY (30px);
 	transition: opacity 1s, transform 1s;
-	&.animated{
+
+	&.animated {
 		opacity: 1;
 		transform: translateY(0);
 	}
 
 }
+
 //button
 .button {
 	border-radius: 5px;
@@ -159,6 +162,7 @@ ul.custom {
 		}
 
 	}
+
 	&.contact {
 		opacity: 1;
 		background: linear-gradient($dark-purple, $dark-purple) padding-box, linear-gradient(133deg, $medium-purple, $light-purple) border-box;
@@ -190,9 +194,10 @@ ul.custom {
 		}
 	}
 }
+
 //Gradient text
 .gradient-purple {
-	background: -webkit-linear-gradient($extra-light-purple, $light-purple,   $medium-purple);
+	background: -webkit-linear-gradient($extra-light-purple, $light-purple, $medium-purple);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -333,17 +338,14 @@ header.main {
 
 //Hero{
 section.hero {
-	background: $linear-gradient-1;
-
+	background: url("@/assets/images/home/background.svg") center top no-repeat;
+	background-size: cover;
 	position: relative;
 	height: 100vh;
 
 	@screen lg {
 		height: 100vh;
 	}
-
-
-
 
 	.svg-container {
 
@@ -354,6 +356,7 @@ section.hero {
 
 		svg,
 		img {
+			position: relative;
 			// width: 70%;
 			margin: auto;
 			max-height: 50vh;
@@ -370,16 +373,39 @@ section.hero {
 				max-width: 1280px;
 			}
 
-			@screen 2xl {
+			@screen xxl {
 				width: 50%;
 				max-width: 1400px;
 			}
 
 
 		}
+		&:before{
+			@screen md{
+				content: "";
+				background:  radial-gradient(50% 50% at 50% 50%, rgba(255, 116, 66, 0.15) 0%, rgba(255, 244, 240, 0.00) 100%);
+				position: absolute;
+				background-size: 100%;
+				width: 300px;
+				height: 300px;
+				right: 100px;
+			}
+			@screen lg{
+
+			right: 200px;
+		}
+		@screen xl{
+			right: 500px;
+		}
+		@screen xxl{
+			right: 600px;
+		}
+		@screen xxxl{
+			right: 500px;
+		}
 
 
-
+	}
 	}
 
 
@@ -389,36 +415,37 @@ section.hero {
 
 section.info {
 	margin-top: 0 !important;
-	a{
+
+	a {
 		font-weight: 300;
 	}
 
 
 
-		h3 {
-			display: inline-block;
-			position: relative;
-			padding-bottom: 2px;
-			width: fit-content;
-			margin: 0;
+	h3 {
+		display: inline-block;
+		position: relative;
+		padding-bottom: 2px;
+		width: fit-content;
+		margin: 0;
 
+		&:before {
+			content: "";
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: $orange;
+			transition: width 0.3s;
+		}
+
+		&.active {
 			&:before {
-				content: "";
-				position: absolute;
-				bottom: -2px;
-				left: 0;
-				width: 0;
-				height: 2px;
-				background: $orange;
-				transition: width 0.3s;
-			}
-
-			&.active {
-				&:before {
-					width: 100%;
-				}
+				width: 100%;
 			}
 		}
+	}
 
 
 	.image-container {
@@ -453,3 +480,85 @@ section.info {
 
 
 }
+
+//Project section
+section.projects {
+	.image-container {
+		position: relative;
+		z-index: 5;
+
+		&:after {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			width: calc(80% + 2px);
+			height: calc(100% + 2px);
+			bottom: -22px;
+			left: 58px;
+			border-radius: 10px;
+		}
+
+		&:before {
+			z-index: 2;
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 80%;
+			border-radius: 6px;
+			border: 4px solid transparent;
+			bottom: -20px;
+			background-origin: border-box;
+			background-clip: content-box, border-box;
+		}
+
+			&.right-image {
+				&:before {
+					background-image: linear-gradient(230deg, rgba($medium-purple, .3), rgba($light-purple, .5), rgba($orange, .3), $light-peach);
+					left: 20px;
+				}
+
+				&:after {
+					background-image: linear-gradient(77deg, $orange, $dark-purple, );
+					left: 20px;
+				}
+			}
+
+			&.left-image {
+				&:before {
+					background-image:linear-gradient(120deg, rgba($medium-purple, .3),
+					rgba($light-purple, .5),
+					rgba($orange, .3),
+					$light-peach);
+					left: 60px;
+				}
+
+				&:after {
+					background-image: linear-gradient(120deg, $dark-purple, $orange );
+				left: 60px;
+				}
+			}
+
+			img {
+				z-index: 100;
+				position: relative;
+				border-radius: 10px;
+				box-shadow: 10 10px 20px 4px (rgba($default-dark, .3));
+				border: 4px solid transparent;
+
+				background-origin: border-box;
+				background-clip: content-box, border-box;
+
+				&.image-left {
+					background-image: linear-gradient($light-peach, $light-purple),
+						linear-gradient(270deg, $dark-purple, rgba($light-peach, 0));
+				}
+
+				&.image-right {
+					background-image: linear-gradient($light-peach, $light-purple),
+						linear-gradient(90deg, $dark-purple, r, rgba($light-peach, 0));
+				}
+			}
+
+
+		}
+	}

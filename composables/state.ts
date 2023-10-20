@@ -91,6 +91,12 @@ export const useScreenSize = () => {
 		}
 
 		switch (true) {
+			case windowWidth.value >= 1600:
+				size.value = "3xl"
+				break
+			case windowWidth.value >= 1400:
+				size.value = "xxl"
+				break
 			case windowWidth.value >= 1280:
 				size.value = "xl"
 				break
@@ -118,8 +124,8 @@ export const useScreenSize = () => {
 
 export const useAnimateObserver = () => {
 	const animatedEls = document.querySelectorAll('.animate');
-const animatedBtn=document.querySelector(".animated-btn")
-const contactSection = document.querySelector(".contact")
+	const animatedBtn = document.querySelector(".animated-btn")
+	const contactSection = document.querySelector(".contact")
 
 	const options = {
 		threshold: 0.3
@@ -132,10 +138,10 @@ const contactSection = document.querySelector(".contact")
 				setTimeout(() => {
 					observer.unobserve(entry.target);
 				}, 1000); //
-			if(entry.target === contactSection){
-				animatedBtn?.classList.add("slide-in")
+				if (entry.target === contactSection) {
+					animatedBtn?.classList.add("slide-in")
 
-			}
+				}
 			}
 		});
 	}, options);

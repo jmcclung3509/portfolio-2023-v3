@@ -1,17 +1,16 @@
 <template>
 	<main class="relative light-section">
 		<section
-			class=" section pt-44 lg:pt-52 xl-pt-40 fold  hero light">
-			<div
-				class=" flex flex-col justify-center items-center container mx-auto">
+			class=" section fold  hero light flex justify-center items-center relative">
+
 				<div
-					class=" animate flex justify-center items-center flex-col space-y-4">
+					class=" animate flex flex-col space-y-4 mt-[-220px] container mx-auto  text-container items-center">
 					<h1
-						class="text-2xl lg:text-3xl text-center text-purple-dark">
-						Hi, my name is Jessica
+						class="text-2xl lg:text-3xl text-center">
+						Hi, I'm Jessica.
 					</h1>
 					<h2
-						class="text-1xl lg:text-2xl text-center text-purple-dark opacity-80">
+						class="text-1xl lg:text-1.5xl text-purple-dark text-center opacity-80">
 						I design and build things for the web.
 					</h2>
 					<ArrowLink
@@ -19,23 +18,26 @@
 						:underlineLink="true"
 						link="#projects" />
 				</div>
-				<div
-					v-if="['lg', 'xl'].includes(size)"
-					class="svg-container">
+				<div class="svg-container">
+					<template
+					v-if="['lg', 'xl', 'xxl', '3xl'].includes(size)"
+					>
 					<Avatar />
-				</div>
-				<div
+				</template>
+
+				<template
 					v-else
-					class="svg-container">
+				>
 					<img
 						class=""
 						src="@/assets/images/home/mobile-avatar-2.png" />
+			</template>
 				</div>
-			</div>
+
 		</section>
 		<section class=" section info bg-default-dark dark">
 			<div class="animate container mx-auto py-36 space-y-4">
-				<template v-if="['lg', 'xl'].includes(size)">
+				<template v-if="['lg', 'xl', 'xxl', '3xl'].includes(size)">
 					<SkillMain />
 				</template>
 				<template v-else>
