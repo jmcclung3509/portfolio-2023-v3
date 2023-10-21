@@ -99,7 +99,7 @@
 					<li class="w-full md:w-1/2 pb-14">
 						<h3 class="text-light-peach">Soft skills</h3>
 						<p class="text-light-purple ml-[40px]">
-							Creative problem solver, growth mindset, can-do
+							Creative problem solver, growth-mindset, can-do
 							attitude, skilled communicator
 						</p>
 					</li>
@@ -117,7 +117,7 @@
 					saw my potential and hired me, despite my limited experience
 					with Vue, Nuxt, or WordPress. Swiftly, I adapted and became
 					proficient in crafting high-quality web pages using this
-					tech stack.I'm a quick learner, naturally inquisitive, and
+					tech stack. I'm a quick learner, naturally inquisitive, and
 					fortunate to love what I do.
 				</p>
 			</div>

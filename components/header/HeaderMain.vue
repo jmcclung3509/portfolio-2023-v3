@@ -18,7 +18,7 @@
 
 						<li class="relative p-2">
 							<a href="#"
-								data-go-to="about">About</a>
+								data-go-to="about" @click="showSection(About)">About</a>
 						</li>
 						<li class="relative p-2">
 							<a href="#"

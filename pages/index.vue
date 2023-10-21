@@ -35,7 +35,7 @@
 				</div>
 
 		</section>
-		<section class=" section info bg-default-dark dark">
+		<section  class=" section info bg-default-dark dark">
 			<div class="animate container mx-auto py-36 space-y-4">
 				<template v-if="['lg', 'xl', 'xxl', '3xl'].includes(size)">
 					<SkillMain />
@@ -45,9 +45,9 @@
 				</template>
 			</div>
 		</section>
-		<section class="section projects bg-linear-gradient-4 light pb-52">
+		<section id="projects" class="section projects bg-linear-gradient-4 light pb-52">
 			<div class="container  mx-auto space-y-14 py-36">
-				<h2 class="text-2xl text-default-dark">Projects</h2>
+				<h2 class="text-2xl text-default-dark pb-20 ml-20">Projects</h2>
 				<div class="projects-container space-y-48">
 					<Project
 						imageSrc="/static/images/projects/sitezeus-homepage.png"

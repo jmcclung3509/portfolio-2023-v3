@@ -25,7 +25,7 @@
 			<template v-if="data.selectedSection === 'about'">
 
 
-						<div class="flex items-start flex-row justify-center ">
+						<div id="about" class="flex items-start flex-row justify-center ">
 							<div
 								class="flex flex-col w-1/2 items-start space-y-14">
 								<div class="content space-y-7">
@@ -68,8 +68,8 @@
 								</div>
 								<div class="flex flex-col items-start justify-start space-y-7 ml-[40px]">
 									<h2 class=text-light-peach> Want to learn more?</h2>
-									<div class="button-container hollow purple-orange">
-									<nuxt-link to="/contact" target="_blank" class="button "> Get in touch </nuxt-link>
+									<div class="button hollow purple-orange">
+									<nuxt-link to="/contact" target="_blank" class="text-light-peach"> Get in touch </nuxt-link>
 								</div>
 							</div>
 						</div>
@@ -87,7 +87,7 @@
 
 			</template>
 			<template v-if="data.selectedSection === 'skills'">
-				<div
+				<div id="skills"
 								class="flex flex-col w-3/4  items-start space-y-14">
 								<div class="content space-y-7">
 								<p class="text-default-white text-fine">
@@ -115,7 +115,7 @@
 										</li>
 										<li class="w-1/2 pb-14 ">
 											<h3 class="text-light-peach">Soft skills</h3>
-												<p class="text-light-purple ml-[40px]">Creative problem solver, growth mindset, can-do attitude, skilled communicator</p>
+												<p class="text-light-purple ml-[40px]">Creative problem solver, growth-mindset, can-do attitude, skilled communicator</p>
 										</li>
 									</ul>
 								</div>
@@ -125,7 +125,7 @@
 								class="flex flex-col w-3/4 items-start space-y-14">
 								<div class="content space-y-7">
 								<p class="text-default-white text-fine">
-									My journey into development began in early 2021, learning HTML, CSS, vanilla JavaScript, and React. As a freelance developer, I embarked on various small projects for friends and family, steadily building my skills. In 2022, SiteZeus saw my potential and hired me, despite my limited experience with Vue, Nuxt, or WordPress. Swiftly, I adapted and became proficient in crafting high-quality web pages using this tech stack.I'm a quick learner, naturally inquisitive, and fortunate to love what I do.
+									My journey into development began in early 2021, learning HTML, CSS, vanilla JavaScript, and React. As a freelance developer, I embarked on various small projects for friends and family, steadily building my skills. In 2022, SiteZeus saw my potential and hired me, despite my limited experience with Vue, Nuxt, or WordPress. Swiftly, I adapted and became proficient in crafting high-quality web pages using this tech stack. I'm a quick learner, naturally inquisitive, and fortunate to love what I do.
 								</p>
 
 								</div>
