@@ -49,7 +49,11 @@
 			<div class="container  mx-auto space-y-14 py-36">
 				<h2 class="text-2xl text-default-dark pb-20 ml-20">Projects</h2>
 				<div class="projects-container space-y-48">
-					<Project
+
+					<ProjectBox title="SiteZeus" link="https://sitezeus.com" slug="sitezeus" 	imageSrc="/static/images/projects/sitezeus-homepage.png">
+						<template #description> <p class="text-light-peach text-1.2xl"> Vue, Nuxt, Tailwind</p></template>
+					</ProjectBox>
+					<!-- <Project
 						imageSrc="/static/images/projects/sitezeus-homepage.png"
 						projectTitle="SiteZeus Website"
 						:projectTags="['Vue/Nuxt', 'tailwind', 'sass']"
@@ -132,7 +136,7 @@
 							>
 						is a fun trivia game that fetches data from an open source trivia API and displays the results</template
 						>
-					</Project>
+					</Project> -->
 				</div>
 			</div>
 		</section>

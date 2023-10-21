@@ -37,3 +37,7 @@ const props = defineProps({
 	buttons: Array
 });
 </script>
+<style lang="scss">
+
+
+</style>

@@ -15,9 +15,11 @@ $linear-gradient-1: linear-gradient(149.25deg, $default-white , $light-peach, $e
 $linear-gradient-2: linear-gradient($medium-purple, $dark-purple);
 $linear-gradient-3: linear-gradient(45deg, $medium-purple, $dark-purple);
 
+
 $linear-gradient-4: linear-gradient(77deg, $light-peach, $extra-light-purple, $light-purple, $extra-light-purple, $light-peach);
 
 $border-gradient: linear-gradient(45deg, $orange, $dark-purple);
+$overlay-gradient: linear-gradient(77deg, rgba($medium-purple, .8), rgba($dark-purple, .8));
 
 
 
