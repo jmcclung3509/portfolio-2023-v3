@@ -4,23 +4,23 @@
 			class=" section fold  hero light flex justify-center items-center relative">
 
 				<div
-					class=" animate flex flex-col space-y-4 mt-[-220px] container mx-auto  text-container items-center">
+					class=" animate flex flex-col space-y-4 lg:space-y-7 mt-[-220px] xl:mt-[-300px] container mx-auto  text-container items-center py-7" id="text-container">
 					<h1
-						class="text-2xl lg:text-3xl text-center">
+						class="text-2xl lg:text-3xl xl:text-4xl xxl:text-5xl text-center">
 						Hi, I'm Jessica.
 					</h1>
 					<h2
-						class="text-1xl lg:text-1.5xl text-purple-dark text-center opacity-80">
+						class="text-1xl lg:text-1.5xl xl:text-2xl text-purple-dark text-center opacity-80">
 						I design and build things for the web.
 					</h2>
 					<ArrowLink
-						label="Check out my projects"
+						label="Skip to projects"
 						:underlineLink="true"
 						link="#projects" />
 				</div>
-				<div class="svg-container">
+				<div class="svg-container" id="svg-container">
 					<template
-					v-if="['lg', 'xl', 'xxl', '3xl'].includes(size)"
+					v-if="!isMobile"
 					>
 					<Avatar />
 				</template>
@@ -37,7 +37,7 @@
 		</section>
 		<section  class=" section info bg-default-dark dark">
 			<div class="animate container mx-auto py-36 space-y-4">
-				<template v-if="['lg', 'xl', 'xxl', '3xl'].includes(size)">
+				<template v-if="!isMobile">
 					<SkillMain />
 				</template>
 				<template v-else>
@@ -45,98 +45,31 @@
 				</template>
 			</div>
 		</section>
-		<section id="projects" class="section projects bg-linear-gradient-4 light pb-52">
+		<section id="projects" class="section projects bg-light-peach pb-52">
 			<div class="container  mx-auto space-y-14 py-36">
-				<h2 class="text-2xl text-default-dark pb-20 ml-20">Projects</h2>
-				<div class="projects-container space-y-48">
+				<h2 class="text-2xl text-default-dark  ml-20">Projects</h2>
+				<div class="projects-container flex flex-col justify-center items-center md:flex-row md:flex-wrap">
 
-					<ProjectBox title="SiteZeus" link="https://sitezeus.com" slug="sitezeus" 	imageSrc="/static/images/projects/sitezeus-homepage.png">
-						<template #description> <p class="text-light-peach text-1.2xl"> Vue, Nuxt, Tailwind</p></template>
-					</ProjectBox>
-					<!-- <Project
-						imageSrc="/static/images/projects/sitezeus-homepage.png"
-						projectTitle="SiteZeus Website"
-						:projectTags="['Vue/Nuxt', 'tailwind', 'sass']"
-						:buttons="siteZeusButtons">
-						<template #description
-							>The
-							<a
-								href="https://sitezeus.com"
-								target="_blank">
-								SiteZeus</a
-							>
-							website showcases my dual experience modernizing
-							existing WordPress pages into a sleek Vue/Nuxt
-							framework, as well as crafting numerous new, dynamic
-							and user-centeric webpages.</template
-						>
-					</Project>
-					<Project
-						:reverse="true"
-						imageSrc="/static/images/projects/insites-homepage.png"
-						projectTitle="SiteZeus Insites"
-						:projectTags="['WordPress', 'PHP', 'sass']"
-						:buttons="insitesButtons">
-						<template #description
-							>Maintained the existing WordPress webpages on
-							<a
-								href="https://insites.sitezeus.com"
-								target="_blank"
-								>Insites</a
-							>
-							while continuously infusing the website with fresh
-							and engaging content, including new webpages,
-							webinar landing pages, and captivatng blog posts.
-						</template>
-					</Project>
-					<Project
-						imageSrc="/static/images/projects/nicks-homepage.png"
-						projectTitle="Nick's Restaurant Website"
-						:projectTags="['VUE/Nuxt', 'Tailwind', 'sass', 'Figma']"
-						:buttons="nicksButtons">
-						<template #description
-							>Revitalized the online presence of
-							<a
-								href="https://deft-gingersnap-b9df5d.netlify.app/"
-								target="_blank">
-								Nick's Restaurant,</a
-							>
-							a beloved family-owned establishment in my hometown.
-							By redesigning their website, we were able to create
-							a more engaging and interactive platform,
-							strengthening their connection with customers and
-							enhancing their online visibility.
-						</template>
-					</Project>
-					<Project
-						:reverse="true"
-						imageSrc="/static/images/projects/sticky-notes-app.png"
-						projectTitle="Sticky Notes App"
-						:projectTags="['React', 'Figma', 'Bootstrap']"
-						:buttons="stickyButtons">
-						<template #description
-							><a href="https://super-sticky-notes.vercel.app/"
+					<FlipBox title="SiteZeus" link="/projects/sitezeus" slug="sitezeus" 	imageSrc="static/images/pages/home/sitezeus-homepage.png" :tagArray="['Vue', 'Nuxt', 'Tailwind']">
 
-								target="_blank"
-								>Sticky Notes App</a
-							> is a CRUD note organizing application with a fun UI.  Each note resembles a "post-it" and users can click into the note to add the title and description.  The user can edit, search  and delete individual notes from the page.
-						</template>
-					</Project>
-					<Project
-						imageSrc="/static/images/projects/quizzical-app.png"
-						projectTitle="Quizzical App"
-						:projectTags="['React', 'Figma', 'React hooks']"
-						:buttons="quizzicalButtons">
-						<template #description
-							>
-							<a
-								href="https://my-quizzical-app.vercel.app/"
-								target="_blank">
-								Quizzical</a
-							>
-						is a fun trivia game that fetches data from an open source trivia API and displays the results</template
-						>
-					</Project> -->
+					</FlipBox>
+					<FlipBox title="Insites" link="/projects/insites" slug="insites" 	imageSrc="/static/images/pages/home/insites-homepage.png" :tagArray="['WordPress', 'PHP', 'Vanilla JavaScript']">
+
+					</FlipBox>
+					<FlipBox title="Nick's Restaurant" link="https://deft-gingersnap-b9df5d.netlify.app/" slug="nicks" 	imageSrc="/static/images/pages/home/nicks-homepage.png" :tagArray="['Vue', 'Nuxt', 'Tailwind']">
+
+			</FlipBox>
+			<FlipBox
+			title="Sticky Notes App" link="https://super-sticky-notes.vercel.app/" slug="sticky-notes" 	imageSrc="/static/images/pages/home/sticky-notes-app.png" :tagArray="['React', 'Bootstrap', 'Figma']">
+		</FlipBox>
+		<FlipBox
+				title="Quizzical" link="https://my-quizzical-app.vercel.app/" slug="quizzical" 	imageSrc="/static/images/pages/home/quizzial.png" :tagArray="['React', 'React hooks', 'API', 'Figma']"></FlipBox>
+
+					<FlipBox title="Portfolio" link="" slug="quizzical" 	imageSrc="/static/images/pages/home/portfolio.png" :tagArray="['Vue', 'Nuxt', 'Tailwind']">
+
+					</FlipBox>
+
+
 				</div>
 			</div>
 		</section>
@@ -175,22 +108,39 @@
 import "@/assets/css/tailwind.css";
 
 const size = useScreenSize().size;
+const {isMobile}=useScreenSize()
 
 const route = useRoute();
+
+const textContainer = ref(null);
+const svgContainer = ref(null);
+const svgContainerHeight = ref('auto');
+
+// Function to set the SVG container's height based on the text container's height
+const updateSvgContainerHeight = () => {
+  if (textContainer.value && svgContainer.value) {
+    svgContainerHeight.value = `${textContainer.value.clientHeight}px`;
+  }
+  console.log(svgContainerHeight.value)
+};
+
+
+
+onMounted(() => {
+  updateSvgContainerHeight();
+});
+// Watch for changes in the text container's height and update the SVG container's height
+watchEffect(() => {
+  updateSvgContainerHeight();
+});
+
 
 const data = reactive({
 	mobileMenuOpen: false,
 });
-const siteZeusButtons = [
-	{
-		link: "https://sitezeus.com",
-		label: "Live",
-	},
-	{
-		link: "/projects/sitezeus",
-		label: "Learn more",
-	},
-];
+
+
+
 const insitesButtons = [
 	{
 		link: "https://insites.sitezeus.com",

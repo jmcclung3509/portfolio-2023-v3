@@ -722,7 +722,7 @@ svg {
 		&.glow {
 			opacity: 0.9;
 		}
-	
+
 
 
 	}

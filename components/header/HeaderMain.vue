@@ -2,17 +2,17 @@
 	<header class="main flex w-full h-28"
 		:class="{ 'sticky-header': isHeaderSticky }">
 		<div class="container m-auto flex justify-between items-center z-10 w-full">
-			<div class="left flex items-center justify-center gap-4">
+			<div class="left flex items-center justify-center gap-4 lg:gap-7">
 				<Nuxt-Link to="/">
-				<img class="logo max-h-[80px]"
+				<img class="logo max-h-[60px]"
 					src="@/assets/images/logos/bee.png" />
 				</Nuxt-Link>
 				<Nuxt-Link to="/">
-					<h4 v-show="!['sm', 'md'].includes(size)"
+					<h4 v-show="!isMobile"
 					class="text-2xl pt-4"> Jessica Turner</h4>
 				</Nuxt-Link>
 			</div>
-			<template v-if="!['sm', 'md'].includes(size)">
+			<template v-if="!isMobile">
 				<nav class="right main flex justify-end items-center">
 					<ul class="flex z-10 items-center">
 
@@ -59,6 +59,8 @@
 const scrollPosition = useScroll().scrollPosition
 const scrollDirectionUp = useScroll().scrollDirectionUp
 const size = useScreenSize().size
+const {isMobile} = useScreenSize()
+
 
 
 const data = reactive({

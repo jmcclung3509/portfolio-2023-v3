@@ -3,7 +3,7 @@
 		<div class="container m-auto flex justify-between items-center z-10 w-full">
 			<div class="left flex items-center justify-center gap-4">
 				<Nuxt-Link to="/">
-				<img class="logo max-h-[80px]"
+				<img class="logo max-h-[60px]"
 					src="@/assets/images/logos/bee.png" />
 				</Nuxt-Link>
 				<Nuxt-Link to="/">
@@ -15,13 +15,13 @@
 <div class="right flex items center justify-center gap-4">
 				<Nuxt-link to="/">
 					<font-awesome-icon
-				class="social-icon text-1.5xl hover:text-dark-purple"
+				class=" text-1.5xl hover:text-dark-purple"
 				:icon="['fas', 'fa-close']"
 
 				 />
 				</Nuxt-Link>
 			</div>
-	
+
 		</div>
 	</header>
 </template>

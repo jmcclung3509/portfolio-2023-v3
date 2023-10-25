@@ -33,7 +33,7 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@300;400;500;700&display=swap",
           rel: "stylesheet"
         },
-   
+
         { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" },
 
 
@@ -55,12 +55,10 @@ export default defineNuxtConfig({
     "@/assets/scss/main.scss",
     "@/assets/scss/variables.scss",
     "@/assets/scss/transitions.scss",
-    '@fortawesome/fontawesome-svg-core/styles.css'
-
-
+    '@fortawesome/fontawesome-svg-core/styles.css',
 
   ],
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", ],
   plugins: [
     { src: '~/plugins/fontawesome.ts' }
   ],
@@ -78,6 +76,7 @@ export default defineNuxtConfig({
     config: {},
   },
   build: {
+    transpile: ["swiper"]
   },
   runtimeConfig: {
     public: {

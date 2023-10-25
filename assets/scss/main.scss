@@ -103,7 +103,7 @@ ul.custom {
 	transform: translateY(0);
 	transition: all .5s;
 	opacity: 0.8;
-	background-image: linear-gradient (45deg, $light-purple, $medium-purple);
+	background-image: linear-gradient(45deg, $light-purple, $medium-purple);
 
 	&.hollow {
 		position: relative;
@@ -305,14 +305,28 @@ header.main {
 	}
 }
 
-.animate-arrow {
-	&:after {
-		content: "arrow_forward";
+.animate-arrow,
+.animate-arrow-prev {
+	&:after, &:before {
+
 		font-family: 'Material Symbols Outlined';
 		font-size: 15px;
 		padding-left: 5px;
 		display: inline-flex;
 		transition: transform .5s
+	}
+
+	&.animate-arrow {
+		&:after {
+			content: "arrow_forward";
+		}
+	}
+
+	&.animate-arrow-prev {
+		&:before{
+			content: "arrow_back";
+			margin-right: 10px;
+		}
 	}
 
 	&.purple {
@@ -323,6 +337,9 @@ header.main {
 		&:after {
 			transform: translateX(5px);
 		}
+		&:before{
+			transform: translateX(-5px);
+		}
 
 
 	}
@@ -330,13 +347,17 @@ header.main {
 
 //Hero{
 section.hero {
-	background: url("@/assets/images/home/background.svg") center top no-repeat;
+	background-image: $linear-gradient-1;
+	background-position: center top;
+	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
 	height: 100vh;
 
+
 	@screen lg {
 		height: 100vh;
+		max-height: 1100px;
 	}
 
 	.svg-container {
@@ -346,58 +367,36 @@ section.hero {
 		left: 0;
 		right: 0;
 
-		svg,
-		img {
-			position: relative;
-			// width: 70%;
-			margin: auto;
-			max-height: 50vh;
+		// svg,
+		// img {
+		// 	position: relative;
+
+		// 	margin: auto;
+		// 	max-height: 50vh;
 
 
-			@screen lg {
-				width: 80%;
-				max-width: 1024px;
-
-			}
-
-			@screen xl {
-				width: 65%;
-				max-width: 1280px;
-			}
-
-			@screen xxl {
-				width: 50%;
-				max-width: 1400px;
-			}
+		// 	@screen lg {
+		// 		width: 80%;
+		// 		max-width: 1024px;
 
 
-		}
-		&:before{
-			@screen md{
-				content: "";
-				background:  radial-gradient(50% 50% at 50% 50%, rgba(255, 116, 66, 0.15) 0%, rgba(255, 244, 240, 0.00) 100%);
-				position: absolute;
-				background-size: 100%;
-				width: 300px;
-				height: 300px;
-				right: 100px;
-			}
-			@screen lg{
+		// 	}
 
-			right: 200px;
-		}
-		@screen xl{
-			right: 500px;
-		}
-		@screen xxl{
-			right: 600px;
-		}
-		@screen xxxl{
-			right: 500px;
-		}
+		// 	@screen xl {
+		// 		width: 65%;
+		// 		max-width: 1280px;
+
+		// 	}
+
+		// 	@screen xxl {
+		// 		width: 50%;
+		// 		max-width: 1400px;
+
+		// 	}
 
 
-	}
+		// }
+
 	}
 
 
@@ -443,10 +442,11 @@ section.info {
 	.image-container {
 		position: relative;
 		transform: translateX(8%);
-
+		width: 60%;
 		img {
 			position: absolute;
 			z-index: 30;
+			width: 100%;
 
 		}
 
@@ -454,7 +454,7 @@ section.info {
 			content: "";
 			position: absolute;
 			width: 100%;
-			height: 100%;
+			height: 80%;
 			background-image: linear-gradient($default-dark, $default-dark),
 				linear-gradient(45deg, $dark-purple, $orange);
 
@@ -475,79 +475,25 @@ section.info {
 
 //Project section
 section.projects {
-	.image-container {
-		position: relative;
-		z-index: 5;
+	.front-box{
+		&.sitezeus{
+			background:$overlay-gradient, url("@/assets/images/project-images/sitezeus-homepage.png");
 
-		&:after {
-			content: "";
-			position: absolute;
-			z-index: 1;
-			width: 75%;
-			height: 90%;
-			bottom: -11px;
-			left: 38px;
-			border-radius: 10px;
 		}
-
-		&:before {
-			z-index: 2;
-			content: "";
-			position: absolute;
-			height: 94%;
-			width: 75%;
-			border-radius: 6px;
-			border: 2px solid transparent;
-			bottom: -10px;
-			background-origin: border-box;
-			background-clip: content-box, border-box;
+		&.insites{
+			background:$overlay-gradient, url("@/assets/images/project-images/insites-homepage.png");
 		}
-
-			&.right-image {
-				&:before {
-					background-image:linear-gradient(260deg, $light-peach, rgba($light-peach,.8));
-					left: 30px;
-				}
-
-				&:after {
-					background-image: linear-gradient(260deg, $dark-purple,  $light-peach,  $light-peach, $dark-purple);
-					left: 31px;
-				}
-			}
-
-			&.left-image {
-				&:before {
-					background-image:linear-gradient(90deg, $light-peach, rgba($light-peach,.8));
-					left: 70px;
-				}
-
-				&:after {
-					background-image: linear-gradient(90deg, $dark-purple, rgba($dark-purple, 1), rgba($light-peach, 1));
-				left: 70px;
-				}
-			}
-
-			img {
-				z-index: 100;
-				position: relative;
-				border-radius: 10px;
-				box-shadow: 10 10px 20px 4px (rgba($default-dark, .3));
-				border: 2px solid transparent;
-
-				// background-origin: border-box;
-				// background-clip: content-box, border-box;
-
-				// &.left-image {
-				// 	background-image: linear-gradient(180deg,$dark-purple 5%, $light-peach, $light-peach),
-				// 		linear-gradient(270deg, $dark-purple, rgba($light-peach, 0));
-				// }
-
-				// &.image-right {
-				// 	background-image: linear-gradient(180deg,$dark-purple 5%, $light-peach, $light-peach),
-				// 		linear-gradient(270deg, $dark-purple, rgba($light-peach, 0));
-				// }
-			}
-
-
+		&.nicks{
+			background: $overlay-gradient, url("@/assets/images/project-images/nicks-homepage.png");
+		}
+		&.quizzical{
+			background: $overlay-gradient, url("@/assets/images/project-images/quizzical-app.png");
+		}
+		&.sticky-notes{
+			background: $overlay-gradient, url("@/assets/images/project-images/sticky-notes-app.png");
+		}
+		&.portfolio{
+			background: $overlay-gradient, url("@/assets/images/project-images/portfolio.png");
 		}
 	}
+}

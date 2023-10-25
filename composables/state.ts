@@ -80,6 +80,7 @@ export const useScroll = () => {
 export const useScreenSize = () => {
 	let windowWidth = ref(0)
 	let isMobile = ref(false)
+
 	let size = ref(null)
 
 	const handleResize = () => {

@@ -7,7 +7,7 @@
 				<h2 class="text-default-dark text-2xl">Let's connect!</h2>
 				<p class="text-center text-1.2xl text-default-dark">
 					My virtual door is always open for a friendly chat or to
-					answer any questions. Feel free to drop me a line
+					answer any questions. Feel free to drop me a line.
 				</p>
 			</div>
 			<form
