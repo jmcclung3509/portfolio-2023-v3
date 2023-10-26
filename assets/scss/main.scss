@@ -363,39 +363,19 @@ section.hero {
 	.svg-container {
 
 		position: absolute;
-		bottom: 0;
+		bottom: -16px;
 		left: 0;
 		right: 0;
 
-		// svg,
-		// img {
-		// 	position: relative;
+		svg,
+		img {
+			position: relative;
 
-		// 	margin: auto;
-		// 	max-height: 50vh;
-
-
-		// 	@screen lg {
-		// 		width: 80%;
-		// 		max-width: 1024px;
+			margin: auto;
+		}
 
 
-		// 	}
 
-		// 	@screen xl {
-		// 		width: 65%;
-		// 		max-width: 1280px;
-
-		// 	}
-
-		// 	@screen xxl {
-		// 		width: 50%;
-		// 		max-width: 1400px;
-
-		// 	}
-
-
-		// }
 
 	}
 
@@ -477,23 +457,23 @@ section.info {
 section.projects {
 	.front-box{
 		&.sitezeus{
-			background:$overlay-gradient, url("@/assets/images/project-images/sitezeus-homepage.png");
+			background:$overlay-gradient-dark, url("@/assets/images/project-images/sitezeus-homepage.png");
 
 		}
 		&.insites{
-			background:$overlay-gradient, url("@/assets/images/project-images/insites-homepage.png");
+			background:$overlay-gradient-dark, url("@/assets/images/project-images/insites-homepage.png");
 		}
 		&.nicks{
-			background: $overlay-gradient, url("@/assets/images/project-images/nicks-homepage.png");
+			background: $overlay-gradient-dark
 		}
 		&.quizzical{
-			background: $overlay-gradient, url("@/assets/images/project-images/quizzical-app.png");
+			background: $overlay-gradient-dark, url("@/assets/images/project-images/quizzical-app.png");
 		}
 		&.sticky-notes{
-			background: $overlay-gradient, url("@/assets/images/project-images/sticky-notes-app.png");
+			background: $overlay-gradient-dark, url("@/assets/images/project-images/sticky-notes-app.png");
 		}
 		&.portfolio{
-			background: $overlay-gradient, url("@/assets/images/project-images/portfolio.png");
+			background: $overlay-gradient-dark, url("@/assets/images/project-images/portfolio.png");
 		}
 	}
 }

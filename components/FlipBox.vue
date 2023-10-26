@@ -6,10 +6,10 @@
 			<div
 				class="front-box border-box flex flex-col justify-center items-cener space-y-4"
 				:class="props.slug"
-				:ref="frontBox">
+				>
 				<div
 					class="text-container flex flex-col space-y-2 absolute z-100 top-0 bottom-0 left-0 right-0 flex justify-center items-center">
-					<h2 class="text-default-dark text-2xl">
+					<h2 class="text-light-peach text-2xl">
 						{{ props.title }}
 					</h2>
 				</div>
@@ -51,15 +51,14 @@ const updateBackBoxHeight = () => {
 	if (frontBox.value) {
 		// Access the ref using frontBox.value
 		const frontBoxHeight = frontBox.value.clientHeight + "px";
-		console.log(frontBoxHeight);
+
 		backBoxHeight.value = frontBoxHeight;
-		console.log(backBoxHeight.value);
+	
 	}
 };
 
 onMounted(() => {
 	frontBox.value = document.querySelector(".front-box");
-
 	updateBackBoxHeight();
 	window.addEventListener("resize", updateBackBoxHeight);
 });

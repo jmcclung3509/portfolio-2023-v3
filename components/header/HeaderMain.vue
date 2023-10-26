@@ -18,15 +18,12 @@
 
 						<li class="relative p-2">
 							<a href="#"
-								data-go-to="about" @click="showSection(About)">About</a>
+								data-go-to="about" >About</a>
 						</li>
+
 						<li class="relative p-2">
 							<a href="#"
-								data-go-to="skills">Skills</a>
-						</li>
-						<li class="relative p-2">
-							<a href="#"
-								data-go-to="skills">Projects</a>
+								data-go-to="projects">Projects</a>
 						</li>
 						<li class="relative p-2">
 							<nuxt-link to="/contact">Contact</nuxt-link>

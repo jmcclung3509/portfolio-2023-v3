@@ -13,16 +13,15 @@
 						class="text-1xl lg:text-1.5xl xl:text-2xl text-purple-dark text-center opacity-80">
 						I design and build things for the web.
 					</h2>
-					<ArrowLink
-						label="Skip to projects"
-						:underlineLink="true"
-						link="#projects" />
+
+					<a href="#" class="text-dark-purple animate-underline animate-arrow"
+								data-go-to="projects">Skip to projects</a>
 				</div>
 				<div class="svg-container" id="svg-container">
 					<template
 					v-if="!isMobile"
 					>
-					<Avatar />
+					<Avatar-2 />
 				</template>
 
 				<template
@@ -75,10 +74,10 @@
 		</section>
 		<section class="section animate bg-default-dark dark relative contact">
 <div class="mx-auto contact-container w-full absolute top-[-50px] left-0 right-0">
-			<div class="animated-btn contact   h-[100px] w-1/6   z-100 mx-auto rounded-2xl flex flex-col items-center justify-center space-y-4 button">
+			<div class="animated-btn contact   h-[100px] w-1/6 min-w-fit p-4  z-100 mx-auto rounded-2xl flex flex-col items-center justify-center space-y-4 button">
 				<!-- <h2 class="text-light-peach justify-center text-2xl"> Want to chat? </h2> -->
 
-				<Nuxt-link to="/contact" class=" inner-button gradient-purple text-2xl"> Let's chat!</Nuxt-link>
+				<Nuxt-link to="/contact" class=" inner-button gradient-purple text-2xl "> Let's chat!</Nuxt-link>
 
 			</div>
 		</div>
@@ -121,15 +120,12 @@ const updateSvgContainerHeight = () => {
   if (textContainer.value && svgContainer.value) {
     svgContainerHeight.value = `${textContainer.value.clientHeight}px`;
   }
-  console.log(svgContainerHeight.value)
 };
-
-
 
 onMounted(() => {
   updateSvgContainerHeight();
 });
-// Watch for changes in the text container's height and update the SVG container's height
+
 watchEffect(() => {
   updateSvgContainerHeight();
 });

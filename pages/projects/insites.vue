@@ -4,8 +4,8 @@
 			<HeaderProjectNav
 					projectLinkNext="/projects/nicks"
 					projectTitleNext="Nicks Restaurant"
-					projectLinkPrev="/projects/sticky-app"
-					projectTitlePrev="Stick Notes App"></HeaderProjectNav>
+					projectLinkPrev="/projects/sitezeus"
+					projectTitlePrev="SiteZeus"></HeaderProjectNav>
 				</template>
 	<div class="container mx-auto space-y-14 flex flex-col mt-48 space-y-14">
 		<h2 class="text-orange text-2xl flex justify-center">Insites</h2>

@@ -25,7 +25,11 @@
 	</header>
 </template>
 <script setup>
+const route=useRoute()
+
 const {isMobile}= useScreenSize()
+
+
 
 const props=defineProps({
 	projectLinkNext: String,
