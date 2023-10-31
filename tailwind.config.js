@@ -44,13 +44,14 @@ module.exports = {
 				"medium-purple": "#B295DA",
 				"dark-purple": "#7F4EC3",
 				"light-peach": "#FFF4F0",
-				orange: "#FF7442",
+				"orange": "#FF7442",
 			},
 			backgroundImage: {
 				"linear-gradient-1":
 					"linear-gradient(149.25deg, #F4F4F4 , #FFF4F0, #ECE4FB, #DDCDEA, #B295DA)",
 				"linear-gradient-4":
 					"linear-gradient(77deg,  #F4F4F4 , #FFF4F0, #ECE4FB, #FFF4F0, #F4F4F4)",
+					'border-gradient': "linear-gradient(#FF7442,#7F4EC3)"
 			},
 			fontFamily: {
 				montserrant: ["Montserrat", "sans-serif"],

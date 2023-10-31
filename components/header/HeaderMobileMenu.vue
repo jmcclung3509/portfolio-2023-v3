@@ -1,5 +1,5 @@
 <template>
-	<div class="mobile-menu flex flex-col flex-1 w-3/4 lg:hidden md:w-1/2 p-10 overflow-auto space-y-4">
+	<div class="mobile-menu flex flex-col flex-1 lg:hidden md:w-1/2 p-10 overflow-auto space-y-4">
 		<ul class="space-y-4">
 			<li>
 				<a href = "#" data-go-to="about">About</a>

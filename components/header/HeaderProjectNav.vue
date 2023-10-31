@@ -3,31 +3,41 @@
 		<div class="container m-auto flex justify-between items-center z-10 w-full">
 			<div class="left flex items-center justify-center gap-4">
 				<Nuxt-Link to="/">
-				<img class="logo max-h-[60px]"
-					src="@/assets/images/logos/bee.png" />
+				<SVGBee/>
 				</Nuxt-Link>
 				<Nuxt-Link to="/">
-					<h4 v-show="!isMobile"
+					<h4 v-show="!['sm', 'md'].includes(size)"
 					class="text-2xl pt-4"> Jessica Turner</h4>
 				</Nuxt-Link>
 			</div>
-
+<template v-if="!['sm', 'md'].includes(size)">
 <div class="right flex items-center justify-center gap-20">
-	<Nuxt-link :to="props.projectLinkPrev" v-show="props.projectTitlePrev" class="prev text-default-dark animate-arrow-prev">
+	<Nuxt-link :to="props.projectLinkPrev" v-show="props.projectTitlePrev" class="prev text-dark-purple animate-arrow-prev">
   {{props.projectTitlePrev}}
 </Nuxt-Link>
-	<Nuxt-link :to="props.projectLinkNext" v-show="props.projectTitleNext" class="next text-default-dark animate-arrow">
+	<Nuxt-link :to="props.projectLinkNext" v-show="props.projectTitleNext" class="next text-dark-purple animate-arrow">
   {{props.projectTitleNext}}
 </Nuxt-Link>
 			</div>
+</template>
+<template v-else>
+	<div class="right flex items-center justify-center gap-4">
+	<Nuxt-link :to="props.projectLinkPrev" v-show="props.projectTitlePrev" class="prev text-dark-purple animate-arrow-prev">
+
+</Nuxt-Link>
+	<Nuxt-link :to="props.projectLinkNext" v-show="props.projectTitleNext" class="next text-dark-purple animate-arrow">
+
+</Nuxt-Link>
+			</div>
+</template>
 
 		</div>
 	</header>
 </template>
 <script setup>
-const route=useRoute()
 
-const {isMobile}= useScreenSize()
+const size = useScreenSize().size
+console.log(size)
 
 
 

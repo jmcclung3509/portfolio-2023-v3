@@ -10,7 +10,7 @@
 				<h2 class="text-orange text-2xl flex justify-center">
 					SiteZeus
 				</h2>
-				<p class="w-[75%] mx-auto">
+				<p class="w-[90%] mx-auto">
 					The SiteZeus website has been built using Vue 3, Nuxt 3, and
 					Tailwind CSS. As part of this development effort, I
 					transformed several legacy WordPress pages into the Vue
@@ -20,7 +20,7 @@
 				</p>
 			</div>
 
-			<div class="carousel-container">
+			<div class="carousel-container pt-14 lg:pt-0">
 				<CarouselImageText
 					:images="sitezeusImages"
 					v-slot="slotProps">
@@ -40,7 +40,7 @@
 						<p>
 							Another aspect of the page I am particullarly proud
 							of is the gradient hover effect for the logo
-							carousel. To achieve this, I developed a Vue
+components/header/HeaderNoNav.vue							carousel. To achieve this, I developed a Vue
 							composable that seamlessly adds a linear gradient
 							effect to SVG logos upon hover. This composable not
 							only allows for customized gradient color stops but
@@ -50,11 +50,7 @@
 							to the logos by modifying their fill attribute.
 						</p>
 						<div class="pt-7 button-container flex flex-row gap-7">
-							<Nuxt-link
-								class="button purple"
-								to="https://sitezeus.com">
-								See it live</Nuxt-link
-							>
+							<SvgButton label="Website" link="https://sitezeus.com" cssClass="bg-border-gradient" />
 						</div>
 					</div>
 					<div
@@ -73,12 +69,9 @@
 							access a wealth of information within a confined
 							space
 						</p>
-						<div class="button-container flex flex-row gap-7 pt-7">
-							<Nuxt-link
-								class="button purple"
-								to="https://sitezeus.com#locate">
-								See it live</Nuxt-link
-							>
+						<div class="button-container flex flex-row gap-7">
+							<SvgButton label="Website" link="https://sitezeus.com#locate" cssClass="bg-border-gradient" />
+
 						</div>
 					</div>
 
@@ -106,11 +99,8 @@
 							customer needs and interests.
 						</p>
 						<div class="button-container flex flex-row gap-7 pt-7">
-							<Nuxt-link
-								class="button purple"
-								to="https://sitezeus.com/under-60-seconds">
-								See it live</Nuxt-link
-							>
+							<SvgButton label="Website" link="https://sitezeus.com/under-60-seconds" cssClass="bg-border-gradient" />
+
 						</div>
 					</div>
 				</CarouselImageText>

@@ -3,8 +3,7 @@
 		<div class="container m-auto flex justify-between items-center z-10 w-full">
 			<div class="left flex items-center justify-center gap-4">
 				<Nuxt-Link to="/">
-				<img class="logo max-h-[60px]"
-					src="@/assets/images/logos/bee.png" />
+				<SVGBee/>
 				</Nuxt-Link>
 				<Nuxt-Link to="/">
 					<h4 v-show="!['sm', 'md'].includes(size)"
@@ -25,3 +24,8 @@
 		</div>
 	</header>
 </template>
+<script setup>
+
+const size = useScreenSize().size
+
+</script>

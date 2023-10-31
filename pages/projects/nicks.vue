@@ -33,12 +33,11 @@
 						CSS and Git/GitHub
 					</p>
 					<div class="button-container flex flex-row gap-7 pt-7">
-							<Nuxt-link
-								class="button purple"
-								to="https://deft-gingersnap-b9df5d.netlify.app/">
-								See it live</Nuxt-link
-							>
-						</div>
+						<SvgButton
+								label="Website"
+								link="https://deft-gingersnap-b9df5d.netlify.app/" />
+					</div>
+
 				</template>
 			</SingleImageText>
 		</div>

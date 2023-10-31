@@ -107,7 +107,7 @@ export const useScreenSize = () => {
 			case windowWidth.value >= 768:
 				size.value = "md"
 				break
-			case windowWidth.value >= 640:
+			case windowWidth.value < 641:
 				size.value = "sm"
 				break
 			default:

@@ -1,10 +1,10 @@
 <template>
 	<div
-		class="image-text-carousel flex flex-col-reverse lg:flex-row lg:items-start justify-center w-full space-y-14 lg:space-y-0 lg:space-x-14">
-		<div class="image-container lg:w-[33%] mx-auto relative rounded-2xl">
+		class="image-text-carousel flex flex-col-reverse lg:flex-row lg:items-start justify-center w-full  lg:space-x-14">
+		<div
+			class="image-container w-full lg:w-[45%]   mx-auto relative rounded-2xl">
 			<client-only>
 				<Swiper
-
 					:modules="data.modules"
 					:space-between="10"
 					:navigation="{
@@ -14,7 +14,6 @@
 					@slideChange="onSlideChange"
 					@swiper="onSwiper">
 					<swiper-slide
-
 						v-for="(item, i) in props.images"
 						:key="i">
 						<template v-if="item.type === 'video/mp4'">
@@ -24,7 +23,7 @@
 								loop="loop"
 								muted="muted">
 								<source
-								class=""
+									class=""
 									:src="item.src"
 									type="video/mp4" />
 							</video>
@@ -36,8 +35,12 @@
 						</template>
 					</swiper-slide>
 					<div class="custom-navigation">
-						<div v-show="data.currentIndex > 0" class="custom-prev"></div>
-						<div v-show="data.currentIndex < props.images.length -1" class="custom-next"></div>
+						<div
+							v-show="data.currentIndex > 0"
+							class="custom-prev"></div>
+						<div
+							v-show="data.currentIndex < props.images.length - 1"
+							class="custom-next "></div>
 					</div>
 				</Swiper>
 			</client-only>
@@ -99,34 +102,53 @@ const onSlideChange = (swiper) => {
 	.custom-prev {
 		display: inline;
 		cursor: pointer;
-		&:before {
+		&:before, &:after {
 			content: "";
 			position: absolute;
 			bottom: 0;
 			z-index: 10;
 			color: $default-dark;
 			font-size: 1rem;
-			transition: all .3s;
+			transition: all 0.3s;
 		}
-			&:hover{
-				&:before{
+		&:hover {
+			&:before, &:after {
 				color: $orange;
 			}
-
 		}
 		&.custom-next {
 			&:before {
+
 				content: "Next";
+				right: 30px;
+			}
+			&:after{
+				font-family: "Material Symbols Outlined";
+				content: "arrow_forward";
 				right: 10px;
 			}
+
 		}
 		&.custom-prev {
 			&:before {
 				content: "Previous";
-				left: 10px;
+				left: 30px;
 
 			}
+			&:after{
+				font-family: "Material Symbols Outlined";
+				content: "arrow_back";
+				left: 10px;
+			}
 		}
+	}
+}
+.image-container{
+	padding-top: 50px;
+	width: 100%;
+	@screen md{
+		padding-top: unset;
+		width: 45%;
 	}
 }
 </style>

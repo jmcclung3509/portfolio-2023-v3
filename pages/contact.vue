@@ -11,16 +11,16 @@
 				</p>
 			</div>
 			<form
-				class="w-1/2 mx-auto"
+				class="w-2/3 mx-auto"
 				action="https://usebasin.com/f/8babbc19d473"
 				method="POST">
 				<div
 					class="flex flex-row flex-nowrap justify-between items-center">
 					<div
 						class="flex flex-col items-start justify-center w-[45%] space-y-2">
-						<label for="first"> First name: </label>
+						<label for="name"> Name: </label>
 						<input
-							class="small-label w-full px-2 py-4"
+							class="small-label w-full px-2 py-4 rounded-2xl"
 							type="name"
 							id="name"
 							name="name"
@@ -30,7 +30,7 @@
 						class="flex flex-col items-start justify-center w-[45%] space-y-2">
 						<label for="email"> Email: </label>
 						<input
-							class="small-box w-full px-2 py-4"
+							class="small-box w-full px-2 py-4 rounded-2xl"
 							type="email"
 							id="email"
 							name="email"
@@ -42,8 +42,8 @@
 					<label for="message"> Message: </label>
 					<textarea
 						rows="5"
-						cols="10"
-						class="w-full px-2 py-4 large-box"
+						cols="25"
+						class="w-full px-2 py-4 large-box rounded-2xl"
 						id="message"
 						name="message"
 						required />

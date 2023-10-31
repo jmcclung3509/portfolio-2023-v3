@@ -68,9 +68,7 @@
 								</div>
 								<div class="flex flex-col items-start justify-start space-y-7 ml-[40px]">
 									<h2 class=text-light-peach> Want to learn more?</h2>
-									<div class="button hollow purple-orange">
-									<nuxt-link to="/contact" target="_blank" class="text-light-peach"> Get in touch </nuxt-link>
-								</div>
+								<SvgButton link="#" goTo="/contact" label="Contact" cssClass="bg-light-peach"/>
 							</div>
 						</div>
 

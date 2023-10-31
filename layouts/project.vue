@@ -14,6 +14,9 @@
 	</div>
 </template>
 <script setup>
+
+
+
 const props = defineProps({
 	projectLink: String,
 	projectLabel: String,

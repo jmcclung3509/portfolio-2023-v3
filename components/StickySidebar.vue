@@ -1,18 +1,21 @@
 <template>
-	<div class="hidden md:block sidebar-container w-[100px]">
+	<div class="hidden lg:block sidebar-container w-[100px]">
 		<div class="flex flex-col items-center gap-4">
 
 
 <div class="flex flex-col space-y-4 items-center">
-			<font-awesome-icon
-				class="social-icon text-1.5xl hover:text-dark-purple"
+	<a href="https://github.com/jmcclung3509" targe="_blank">
+					<font-awesome-icon
+				class="social-icon text-1.5xl text-light-peach hover:text-dark-purple"
 				:icon="['fab', 'fa-github']"
 
-				 />
+				 /></a>
+				 <a href= "https://www.linkedin.com/in/jessica-turner-94b549229/" target="_blank">
 			<font-awesome-icon
-				class="social-icon text-1.5xl hover:text-dark-purple"
+			class="social-icon text-1.5xl text-light-peach hover:text-dark-purple"
 				:icon="['fab', 'fa-linkedin']"
 				/>
+				</a>
 </div>
 			<div class="sidebar-line social-icon w-[2px] h-[80px]" ></div>
 		</div>

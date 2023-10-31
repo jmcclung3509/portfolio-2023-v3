@@ -30,11 +30,10 @@
 						</p>
 
 						<div class="button-container flex flex-row gap-7 pt-7">
-							<Nuxt-link
-								class="button purple"
-								to="https://my-quizzical-app.vercel.app/">
-								See it live</Nuxt-link>
-
+							<SvgButton
+								label="Website"
+								link="https://my-quizzical-app.vercel.app/" />
+					
 						</div>
 					</template>
 				</SingleImageText>

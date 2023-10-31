@@ -9,7 +9,7 @@
 				>
 				<div
 					class="text-container flex flex-col space-y-2 absolute z-100 top-0 bottom-0 left-0 right-0 flex justify-center items-center">
-					<h2 class="text-light-peach text-2xl">
+					<h2 class="text-light-peach text-1.5xl lg:text-2xl">
 						{{ props.title }}
 					</h2>
 				</div>
@@ -17,7 +17,7 @@
 			<div
 				class="back-box border-box text-center p-4 flex justify-center itmes-center bg-default-dark flex flex-col space-y-7"
 				:style="{ height: backBoxHeight }">
-				<div class="flex flex-row justify-center items-center">
+				<div class="flex flex-col space-y-2 lg:space-y-0 lg:flex-row justify-center items-center">
 					<div
 						class="flex flex-row flex-wrap justify-center items-center gap-4"
 						v-for="(tag, i) in props.tagArray"
@@ -53,7 +53,7 @@ const updateBackBoxHeight = () => {
 		const frontBoxHeight = frontBox.value.clientHeight + "px";
 
 		backBoxHeight.value = frontBoxHeight;
-	
+
 	}
 };
 

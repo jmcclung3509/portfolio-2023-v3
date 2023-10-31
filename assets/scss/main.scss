@@ -193,19 +193,24 @@ ul.custom {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+.gradient-text{
+	background: -webkit-linear-gradient(45deg, $orange, $dark-purple);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
 
 header.main {
+	z-index: 2;
 	padding-left: 0;
 	padding-right: 0;
-
 	box-shadow: 0px 4px 4px 0px rgba(48, 31, 64, 0.3);
 	position: absolute;
 	top: 0;
 	width: 100%;
 	transition: background-color .5s ease;
 	background-color: $light-peach;
-	z-index: 2;
+
 
 	&.sticky-header {
 		position: fixed;
@@ -215,6 +220,26 @@ header.main {
 
 
 	}
+
+	ul {
+		li {
+			display: inline;
+			list-style-type: none;
+
+			a {
+				text-decoration: none;
+				position: relative;
+				border-bottom: 2px solid transparent;
+				transition: all .5s;
+				color: $dark-purple;
+
+
+			}
+		}
+	}
+	h4{
+		font-family: 'Dancing Script', cursive;
+	}
 }
 
 
@@ -222,11 +247,8 @@ header.main {
 .mobile-menu {
 	position: fixed;
 	top: 100px;
-
 	z-index: 10;
-	background: $linear-gradient-1;
-	// border-top: 2px solid $medium-purple;
-	// border-left: 2px solid $medium-purple;
+	background: $default-dark;
 	border-radius: 12px 0 0 12px;
 	overflow-y: hidden;
 	height: 100%;
@@ -234,6 +256,8 @@ header.main {
 	transform: translateX(100%);
 	width: 0%;
 	transition: transform 0.5s cubic-bezier(0.76, -0.01, 0.3, 0.99);
+	top:0;
+	width: 60%;
 
 
 	li {
@@ -241,7 +265,11 @@ header.main {
 		justify-content: flex-end;
 
 		a {
-			color: $default-dark;
+			color: $light-peach;
+			&.button{
+				background: transparent;
+				opacity: 1;
+			}
 
 		}
 	}
@@ -252,8 +280,8 @@ header.main {
 		height: 100vh;
 		opacity: 0.95;
 		justify-content: flex-start;
-		z-index: 100;
-		padding: 40px 20px;
+		z-index: 20;
+		padding: 120px 20px;
 	}
 
 }
@@ -264,21 +292,24 @@ header.main {
 .animate-underline {
 	display: inline-block;
 	position: relative;
+	cursor: pointer;
 	padding-bottom: 2px;
-	width: fit-content;
 	margin: 0;
 	text-decoration: 0;
 	border: none;
-	transition: border-color .3s;
+	transition: all .3s;
+	color: $medium-purple;
 
 	&:before {
 		content: "";
 		position: absolute;
-		bottom: -2px;
+		z-index: -1;
 		left: 0;
 		width: 0;
 		height: 2px;
-		transition: width .3s ease;
+		bottom: -2px;
+		transition: width .3s ease-out;
+		background: linear-gradient(to right, $medium-purple, rgba($dark-purple, .4));
 	}
 
 	&:hover {
@@ -287,27 +318,32 @@ header.main {
 		}
 	}
 
-	&.purple {
-		color: $dark-purple;
-
-		&:before {
-			content: "";
-			background: linear-gradient (to right, $dark-purple, rgba($dark-purple, .40));
-		}
-	}
-
 	&.orange {
 
-		&:before {
-			content: "";
-			background: $orange;
+		&:hover {
+			color: $orange;
+
+			&:before {
+				background: linear-gradient(to right, $orange, rgba($orange, .4));
+			}
+
+			a {
+				color: $orange;
+
+			}
+
+
 		}
 	}
 }
 
+
+
 .animate-arrow,
 .animate-arrow-prev {
-	&:after, &:before {
+
+	&:after,
+	&:before {
 
 		font-family: 'Material Symbols Outlined';
 		font-size: 15px;
@@ -323,7 +359,7 @@ header.main {
 	}
 
 	&.animate-arrow-prev {
-		&:before{
+		&:before {
 			content: "arrow_back";
 			margin-right: 10px;
 		}
@@ -337,7 +373,8 @@ header.main {
 		&:after {
 			transform: translateX(5px);
 		}
-		&:before{
+
+		&:before {
 			transform: translateX(-5px);
 		}
 
@@ -360,6 +397,7 @@ section.hero {
 		max-height: 1100px;
 	}
 
+
 	.svg-container {
 
 		position: absolute;
@@ -372,6 +410,10 @@ section.hero {
 			position: relative;
 
 			margin: auto;
+			max-width: 60%;
+			@screen md{
+				max-width: unset;
+			}
 		}
 
 
@@ -423,6 +465,7 @@ section.info {
 		position: relative;
 		transform: translateX(8%);
 		width: 60%;
+
 		img {
 			position: absolute;
 			z-index: 30;
@@ -455,24 +498,29 @@ section.info {
 
 //Project section
 section.projects {
-	.front-box{
-		&.sitezeus{
-			background:$overlay-gradient-dark, url("@/assets/images/project-images/sitezeus-homepage.png");
+	.front-box {
+		&.sitezeus {
+			background: $overlay-gradient-dark, url("@/assets/images/project-images/sitezeus-homepage.png");
 
 		}
-		&.insites{
-			background:$overlay-gradient-dark, url("@/assets/images/project-images/insites-homepage.png");
+
+		&.insites {
+			background: $overlay-gradient-dark, url("@/assets/images/project-images/insites-homepage.png");
 		}
-		&.nicks{
+
+		&.nicks {
 			background: $overlay-gradient-dark
 		}
-		&.quizzical{
+
+		&.quizzical {
 			background: $overlay-gradient-dark, url("@/assets/images/project-images/quizzical-app.png");
 		}
-		&.sticky-notes{
+
+		&.sticky-notes {
 			background: $overlay-gradient-dark, url("@/assets/images/project-images/sticky-notes-app.png");
 		}
-		&.portfolio{
+
+		&.portfolio {
 			background: $overlay-gradient-dark, url("@/assets/images/project-images/portfolio.png");
 		}
 	}

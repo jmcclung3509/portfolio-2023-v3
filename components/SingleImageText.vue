@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="flex flex-col-reverse lg:flex-row lg:items-start justify-center w-full space-y-14 lg:space-y-0 lg:space-x-14">
-		<div class="image-container lg:w-[33%] mx-auto relative rounded-2xl">
+		<div class="image-container lg:w-[33%] mx-auto relative rounded-2xl pt-14 lg:pt-0">
 			<template v-if="props.isVideo">
 				<video
 					class="video rounded-2xl"
