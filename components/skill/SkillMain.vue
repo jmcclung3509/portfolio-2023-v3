@@ -113,7 +113,7 @@
 										</li>
 										<li class="w-1/2 pb-14 ">
 											<h3 class="text-light-peach">Soft skills</h3>
-												<p class="text-light-purple ml-[40px]">Creative problem solver, growth-mindset, can-do attitude, skilled communicator</p>
+												<p class="text-light-purple ml-[40px] w-4/5">Creative problem solver, growth-mindset, can-do attitude, skilled communicator, self-starter, excellent time-management.</p>
 										</li>
 									</ul>
 								</div>

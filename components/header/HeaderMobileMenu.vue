@@ -11,7 +11,7 @@
 				<a href = "#" data-go-to="projects">Projects</a>
 			</li>
 			<li>
-				<nuxt-link class="button hollow" to="/resume">Resume</nuxt-link></li>
+				<nuxt-link class="button hollow" to="https://resume.io/r/FY7HX7IvG" >Resume</nuxt-link></li>
 
 		</ul>
 	</div>

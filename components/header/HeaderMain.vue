@@ -30,7 +30,7 @@
 						</li>
 						<li class="relative p-2 ">
 
-					<SvgButton label="Resume" link="/resume" cssClass="bg-border-gradient" />
+					<SvgButton label="Resume" link="https://resume.io/r/FY7HX7IvG" cssClass="bg-border-gradient" />
 						</li>
 					</ul>
 
@@ -54,8 +54,6 @@
 const scrollPosition = useScroll().scrollPosition
 const scrollDirectionUp = useScroll().scrollDirectionUp
 const size = useScreenSize().size
-console.log(size)
-
 
 
 

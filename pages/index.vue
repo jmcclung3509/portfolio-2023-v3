@@ -13,15 +13,14 @@
 					class="text-1xl lg:text-1.5xl xl:text-2xl text-purple-dark text-center opacity-80">
 					I design and build things for the web.
 				</h2>
-<div class="link-container animate-underline  orange">
+				<div class="link-container animate-underline orange">
 					<a
 						href="#"
-						class="text-dark-purple animate-arrow orange  w-fit "
+						class="text-dark-purple animate-arrow orange w-fit"
 						data-go-to="projects"
 						>Skip to projects</a
 					>
-</div>
-
+				</div>
 			</div>
 			<div
 				class="svg-container"
@@ -50,7 +49,7 @@
 		<section
 			id="projects"
 			class="section projects bg-light-peach pb-52">
-			<div class="container mx-auto space-y-14 py-36">
+			<div class="container mx-auto space-y-14 py-36 px-20">
 				<h2 class="text-2xl text-default-dark ml-20">Projects</h2>
 				<div
 					class="projects-container flex flex-col justify-center items-center md:flex-row md:flex-wrap">
@@ -104,7 +103,9 @@
 				</div>
 			</div>
 		</section>
-		<section class="section animate bg-default-dark dark relative contact">
+		<section
+			class="section animate bg-default-dark dark relative contact space-y-14"
+			>
 			<div
 				class="mx-auto contact-container w-full absolute top-[-50px] left-0 right-0">
 				<div
@@ -131,27 +132,27 @@
 					</p>
 					<p class="cite text-light-peach caps">&mdash; Yoda</p>
 				</div>
-
 			</div>
-		</section>
-		<section class="section footer bg-default-dark pt-24">
+
 			<div class="container mx-auto animate space-y-7">
 				<div class="social-icons flex flex-row justify-center gap-7" v-show="['sm', 'md'].includes(size)">
-					<a href="https://github.com/jmcclung3509" targe="_blank">
-					<font-awesome-icon
-				class="social-icon text-1.5xl text-light-peach hover:text-dark-purple"
-				:icon="['fab', 'fa-github']"
-
-				 /></a>
-				 <a href= "https://www.linkedin.com/in/jessica-turner-94b549229/" target="_blank">
-			<font-awesome-icon
-			class="social-icon text-1.5xl text-light-peach hover:text-dark-purple"
-				:icon="['fab', 'fa-linkedin']"
-				/>
-				</a>
+					<a
+						href="https://github.com/jmcclung3509"
+						targe="_blank">
+						<font-awesome-icon
+							class="social-icon text-1.5xl text-light-peach hover:text-dark-purple"
+							:icon="['fab', 'fa-github']"
+					/></a>
+					<a
+						href="https://www.linkedin.com/in/jessica-turner-94b549229/"
+						target="_blank">
+						<font-awesome-icon
+							class="social-icon text-1.5xl text-light-peach hover:text-dark-purple"
+							:icon="['fab', 'fa-linkedin']" />
+					</a>
 				</div>
-				<div class="flex justify-center">
-					<p class="text-[12px] caps text-center text-light-purple font-light">
+				<div class="flex justify-center pt-14">
+					<p class="text-[12px] caps text-light-purple font-light">
 						Designed & developed by me using Adobe Illustrator,
 						Figma, Vue, Nuxt and Tailwind 💜 2023
 					</p>

@@ -6,76 +6,58 @@ export const globalState = reactive({
 })
 
 export const useScroll = () => {
-	const scrollPosition = ref(0)
-	const lastScrollPosition = ref(0)
-	const scrollDirectionUp = ref(false)
-	const colorScrollContainer = ref<HTMLElement | null>(null)
-
-
+	const scrollPosition = ref(0);
+	const lastScrollPosition = ref(0);
+	const scrollDirectionUp = ref(false);
+	const colorScrollContainer = ref<HTMLElement | null>(null);
 
 	const handleScroll = () => {
-		//set current scroll position
-		scrollPosition.value = window.scrollY
-		//set scroll direction
-		scrollDirectionUp.value = lastScrollPosition.value > scrollPosition.value
-		//update lastScrollPosition
-		lastScrollPosition.value = scrollPosition.value
-		//update the width of the :after element based on scroll position
-		if (colorScrollContainer.value) {
-			const maxScroll = document.body.scrollHeight - window.innerHeight
-			const scrollPercentage = (scrollPosition.value / maxScroll) * 100;
+	  // ... (your existing code)
 
-			if (scrollPercentage >= 40 && scrollPercentage <= 55) {
-				const width = ((scrollPercentage - 40) / 40) * 150;
+	  const socialIcons = document.querySelectorAll(".social-icon");
 
-				colorScrollContainer.value.style.setProperty("--scroll-progress", `${width}%`);
 
-			} else if (scrollPercentage > 55) {
-				colorScrollContainer.value.style.setProperty("--scroll-progress", "100%");
-			} else {
-				colorScrollContainer.value.style.setProperty("--scroll-progress", "0%")
-			}
+
+
+	  socialIcons.forEach((icon) => {
+		const iconRect = icon.getBoundingClientRect();
+		const darkSections = document.querySelectorAll(".section.dark");
+
+		let isDark = false;
+
+
+
+		darkSections.forEach((section) => {
+		  const sectionRect = section.getBoundingClientRect();
+		  if (iconRect.top < sectionRect.bottom && iconRect.bottom > sectionRect.top) {
+			isDark = true;
+		  }
+		});
+
+
+
+
+		if (isDark) {
+		  icon.classList.add("light");
+		} else {
+		  icon.classList.remove("light");
 		}
 
-
-
-		const socialIcons = document.querySelectorAll(".social-icon")
-
-
-		socialIcons.forEach((icon) => {
-
-
-			const iconRect = icon.getBoundingClientRect();
-			const isLight = icon.classList.contains("light");
-			const darkSections = document.querySelectorAll(".section.dark")
-			let isDark = false;
-
-			darkSections.forEach((section) => {
-				const sectionRect = section.getBoundingClientRect()
-
-				if (iconRect.top < sectionRect.bottom && iconRect.bottom > sectionRect.top) {
-					isDark = true;
-				}
-			})
-
-			if (isDark) {
-				icon.classList.add("light")
-
-			} else {
-				icon.classList.remove("light")
-			}
-		})
-
+	  });
 	};
+
 	onMounted(() => {
-		window.addEventListener("scroll", handleScroll, { passive: true })
-		colorScrollContainer.value = document.querySelector(".color-scroll-container")
-	})
+	  window.addEventListener("scroll", handleScroll, { passive: true });
+	  colorScrollContainer.value = document.querySelector(".color-scroll-container");
+	});
+
 	onUnmounted(() => {
-		window.removeEventListener("scroll", handleScroll)
-	})
-	return { scrollPosition, scrollDirectionUp, colorScrollContainer }
-}
+	  window.removeEventListener("scroll", handleScroll);
+	});
+
+	return { scrollPosition, scrollDirectionUp, colorScrollContainer };
+  };
+
 
 export const useScreenSize = () => {
 	let windowWidth = ref(0)
