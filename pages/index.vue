@@ -141,14 +141,14 @@
 						targe="_blank">
 						<font-awesome-icon
 							class="social-icon text-1.5xl text-light-peach hover:text-dark-purple"
-							:icon="['fab', 'fa-github']"
+							:icon="['fab', 'github']"
 					/></a>
 					<a
 						href="https://www.linkedin.com/in/jessica-turner-94b549229/"
 						target="_blank">
 						<font-awesome-icon
 							class="social-icon text-1.5xl text-light-peach hover:text-dark-purple"
-							:icon="['fab', 'fa-linkedin']" />
+							:icon="['fab', 'linkedin']" />
 					</a>
 				</div>
 				<div class="flex justify-center pt-14">
@@ -184,7 +184,7 @@ useHead({
 		{hid: 'og:url', property: 'og:url', content: url},
 		{hid: 'og:description', property: 'og:description', content: desc},
 		{hid: 'og:image', property: 'og:image', content: image},
-	
+
 	]
 })
 
