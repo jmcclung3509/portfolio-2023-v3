@@ -163,12 +163,33 @@
 </template>
 
 <script setup>
-import "@/assets/css/tailwind.css";
 
+const config = useRuntimeConfig()
+const route=useRoute()
 const size = useScreenSize().size;
 const { isMobile } = useScreenSize();
+const host=config.BASE_API_BROWSER_URL
+const title = "Jessica Turner | 2023"
+const desc=" Personal website of Jessica Turner"
 
-const route = useRoute();
+const image= host + "/static/images/featured-image.png"
+const url = host + route.fullPath
+useHead({
+	titleTemplate: title,
+	meta: [
+		{name: 'title', content: 'title'},
+		{name: 'description', content: 'desc'},
+		{hid: "og:type", property: "og:type", content: "website"},
+		{hid: "og:title", property: "og:title", content: title},
+		{hid: 'og:url', property: 'og:url', content: url},
+		{hid: 'og:description', property: 'og:description', content: desc},
+		{hid: 'og:image', property: 'og:image', content: image},
+	
+	]
+})
+
+import "@/assets/css/tailwind.css";
+
 
 const textContainer = ref(null);
 const svgContainer = ref(null);

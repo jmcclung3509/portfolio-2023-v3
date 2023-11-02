@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         {
           rel: "icon",
           type: "image/png",
-          href: "/static/images/favicon.png",
+          href: "/static/images/favicon.ico",
         },
         {
           rel: "preconnect",
@@ -33,18 +33,27 @@ export default defineNuxtConfig({
           href: "https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@300;400;500;700&display=swap",
           rel: "stylesheet"
         },
-        {href:"https://fonts.googleapis.com/css2?family=Parisienne&display=swap", rel:"stylesheet"
-      },
-      {
-        href:"https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" ,rel:"stylesheet"
-    },
+
+        {
+          href: "https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap", rel: "stylesheet"
+        },
 
         { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" },
-
-
       ],
+
       noscript: [{ children: "Javascript is required" }],
-      script: [],
+
+      script: [{
+        src: "https://www.googletagmanager.com/gtag/js?id=G-FLKGD5VCNF",
+        defer: "defer"
+
+      },
+      {
+        src: "/static/scripts/gtm.js",
+        defer: "defer",
+        body: true,
+      }
+      ],
     },
   },
 
@@ -63,7 +72,7 @@ export default defineNuxtConfig({
     '@fortawesome/fontawesome-svg-core/styles.css',
 
   ],
-  modules: ["@nuxtjs/tailwindcss", ],
+  modules: ["@nuxtjs/tailwindcss",],
   plugins: [
     { src: '~/plugins/fontawesome.ts' }
   ],
@@ -86,7 +95,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       env: process.env.ENV,
-      BASE_API_BROWSER_URL: ""
+      BASE_API_BROWSER_URL: "https://portfolio-2023-v3.vercel.app/"
     }
   },
   experimental: {
