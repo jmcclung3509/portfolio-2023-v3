@@ -17,8 +17,8 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "icon",
-          type: "image/png",
-          href: "/static/images/favicon.ico",
+          type: "image/ipng",
+          href: "/static/images/favicon.png",
         },
         {
           rel: "preconnect",
