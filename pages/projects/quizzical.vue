@@ -26,14 +26,14 @@
 						</p>
 
 						<p>
-							The quizzical game  was built usig an API, React, React Hooks, styled components, Git/GitHub.
+							The quizzical game  was built using an API, React, React Hooks, styled components, Git/GitHub.
 						</p>
 
 						<div class="button-container flex flex-row gap-7 pt-7">
 							<SvgButton
 								label="Website"
 								link="https://my-quizzical-app.vercel.app/" />
-					
+
 						</div>
 					</template>
 				</SingleImageText>
