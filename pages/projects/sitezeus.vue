@@ -10,7 +10,7 @@
 				<h2 class="text-orange text-2xl flex justify-center">
 					SiteZeus
 				</h2>
-				<p class="w-[90%] mx-auto">
+				<p class="w-[90%] lg:w-[60%] mx-auto">
 					The SiteZeus website has been built using Vue 3, Nuxt 3, and
 					Tailwind CSS. As part of this development effort, I
 					transformed several legacy WordPress pages into the Vue

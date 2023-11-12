@@ -10,7 +10,7 @@
 				<h2 class="text-orange text-2xl flex justify-center">
 					Portfolio
 				</h2>
-				<p class="w-[90%] mx-auto">
+				<p class="w-[90%] lg:w-[60%] mx-auto">
 					My personal website, past and present. I strive to unleash
 					my creativity when designing and developing my personal
 					website, which provides me with the opportunity to explore
