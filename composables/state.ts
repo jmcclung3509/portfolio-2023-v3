@@ -122,7 +122,7 @@ export const useAnimateObserver = () => {
 					observer.unobserve(entry.target);
 				}, 1000); //
 				if (entry.target === contactSection) {
-					animatedBtn?.classList.add("slide-in")
+					animatedBtn?.classList.add("slide-in-bounce")
 
 				}
 			}
