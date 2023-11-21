@@ -139,27 +139,6 @@ useHead({
 
 import "@/assets/css/tailwind.css";
 
-const textContainer = ref(null);
-const svgContainer = ref(null);
-const svgContainerHeight = ref("auto");
-
-// Function to set the SVG container's height based on the text container's height
-const updateSvgContainerHeight = () => {
-	if (textContainer.value && svgContainer.value) {
-		svgContainerHeight.value = `${textContainer.value.clientHeight}px`;
-	}
-};
-
-onMounted(() => {
-	updateSvgContainerHeight();
-
-});
-
-
-
-watchEffect(() => {
-	updateSvgContainerHeight();
-});
 
 const data = reactive({
 	mobileMenuOpen: false,
