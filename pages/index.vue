@@ -101,7 +101,7 @@
 							:icon="['fab', 'linkedin']" />
 					</a>
 				</div>
-				<div class="flex justify-center pt-14">
+				<div class="flex justify-center">
 					<p class="text-[12px] caps text-light-purple font-light">
 						Designed & developed by me using Adobe Illustrator,
 						Figma, Vue, Nuxt and Tailwind 💜 2023
